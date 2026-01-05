@@ -1,0 +1,8 @@
+nav {
+	background-color: lightgray;
+}
+
+ul#liste-types li {
+	display: inline-block;
+	padding-inline: 5px;
+}
