@@ -3112,5 +3112,25 @@ let data = [
 		"evolutions": [
 			"Mew"
 		]
+	},
+	{
+		"nom": "MissingNo.",
+		"taille": "3,3 m",
+		"poids": "10 kg",
+		"type": [
+			"Normal",
+			"Vol"
+		],
+		"png": "152.png",
+		"nom_en": "MissingNo.",
+		"nom_ja": [
+			"Ketsuban",
+			"けつばん"
+		],
+		"description": "(Version Pokemon Rouge et Bleu) MissingNo. n'est pas \"vraiment\" un Pokémon bug : en effet, les développeurs l'ont programmé pour éviter un plantage du jeu lorsqu'une rencontre avec un Pokémon inexistant se produit. On peut donc l'assimiler aux codes d'erreur présents dans les deux premières générations.",
+		"gif": "152.gif",
+		"evolutions": [
+			"MissingNo."
+		]
 	}
 ]
