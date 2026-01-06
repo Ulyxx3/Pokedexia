@@ -1,15 +1,25 @@
+@font-face {
+  font-family: "Pokemon Classic";
+  src:
+    local("Pokemon Classic"),
+    url(/fonts/Pokemon\ Classic.ttf) format("truetype"),
+	url(/fonts/Pokemon\ Classic.woff) format("woff");	
+}
+
 * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Pokemon Classic';
             background: #050a1e;
-            color: #e0e0e0;
+            color: #000000;
             line-height: 1.6;
             min-height: 100vh;
+			font-size: 12px;
         }
+
 
 		/* Style pour le footer  qui ne marche actuellement PAS*/
 footer {
@@ -49,6 +59,7 @@ h1 { /* mess de bienvenu */
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	color: #f2f2f2;
 }
 
 #liste-pokemon { /* changer en div peut-être */
