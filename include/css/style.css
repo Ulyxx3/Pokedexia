@@ -138,3 +138,31 @@ h1 {
 	font-size: 0.9em;
 	color: #666;
 }
+
+#liste-pokemon li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* j'arrivais pas à le faire en full java donc bon */
+#search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#search-input {
+    width: 70%;
+    max-width: 600px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 10px;
+    background: #fff;
+    color: #000;
+}
+
+/* faire bouger le gif que lors du survol */
