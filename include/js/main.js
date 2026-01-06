@@ -38,4 +38,3 @@ searchInput.addEventListener("input", function() {
 // Styliser la barre de recherche avec CSS ?
 
 // Styles de base pour le champ de recherche (dev avec le cul)
-// Styling moved to CSS: #search-wrapper and #search-input
