@@ -2,7 +2,7 @@
 let ul = document.querySelector('#liste-types')
 for (let type of types) {
     let li = document.createElement("li")
-    li.innerHTML = `<a href="type.html?id=${type}">${type}</a>`
+    li.innerHTML = `<a href="type.html?id=${type}"><img src="img/types/${type}.png" alt="${type}"></img></a>` // Ajout de l'image du type
     ul.appendChild(li)
 }
 
