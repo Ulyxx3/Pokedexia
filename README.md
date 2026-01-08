@@ -9,6 +9,7 @@ répertorie les 151 premiers pokémons et un peu plus... (MissingNo.)
 - Barre de recherche pour rechercher les pokémons
 - possibilité de voir directment les évolutions de la page du pokémon
 - affichage de la page de navigation en mosaique
+- Menu déroulant pour les types de pokémon
 
 # Visuels
 
