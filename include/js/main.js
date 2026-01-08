@@ -38,3 +38,4 @@ searchInput.addEventListener("input", function() {
 // Styliser la barre de recherche avec CSS ?
 
 // Styles de base pour le champ de recherche (dev avec le cul)
+// mettre la barre de recherche dans la nav bar tout le temps sauf dans pokemon.html et mettre les types dans un menu déroulant ?
