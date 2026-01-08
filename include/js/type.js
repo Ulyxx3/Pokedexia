@@ -1,9 +1,20 @@
 // Remplir le menu avec les types de pokémon
-let ul = document.querySelector('#liste-types')
-for (let type of types) {
-	let li = document.createElement("li")
-	li.innerHTML = `<a href="type.html?id=${type}"><img src="img/types/${type}.png" alt="${type}"></img></a>` // Ajout de l'image du type
-	ul.appendChild(li)
+let ul = document.querySelector('#liste-types');
+
+if (ul && typeof types !== 'undefined') {
+    for (let type of types) {
+        let li = document.createElement("li");
+        
+        // On crée le lien et l'image
+        // Note : On ne met pas de style ici, le CSS s'occupe de la taille (.dropdown-content img)
+        li.innerHTML = `
+            <a href="type.html?id=${type}">
+                <img src="img/types/${type}.png" alt="${type}">
+            </a>
+        `;
+        
+        ul.appendChild(li);
+    }
 }
 
 // Renvoie un tableau avec les pokémon du type id
