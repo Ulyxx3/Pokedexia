@@ -2,8 +2,7 @@
   font-family: "Pokemon Classic";
   src:
     local("Pokemon Classic"),
-    url(/fonts/Pokemon\ Classic.ttf) format("truetype"),
-	url(/fonts/Pokemon\ Classic.woff) format("woff");	
+    url(././fonts/Pokemon Classic.ttf) format("truetype");	
 }
 
 * {
