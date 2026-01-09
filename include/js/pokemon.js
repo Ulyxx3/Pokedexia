@@ -34,7 +34,7 @@ function get_pokemon(data) {
 function format_types(types) {
 	let str = "Types : "
 	for (let type of types) {
-		str += `${type} (<a href="type.html?id=${type}">lien</a>) `
+		str += ` (<a href="type.html?id=${type}"><img src="img/types/${type}.png" alt="${type}"></img></a>) `
 	}
 	return str
 }
@@ -44,7 +44,7 @@ function format_types(types) {
 function format_evolutions(evolutions) {
 	str = "Évolutions : "
 	for (let evolution of evolutions) {
-		str += `${evolution} (<a href="pokemon.html?id=${evolution}">lien</a>) `
+		str += ` (<a href="pokemon.html?id=${evolution}">${evolution}</a>) `
 	}
 	return str
 }
