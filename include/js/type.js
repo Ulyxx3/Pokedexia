@@ -32,6 +32,6 @@ let pokemons = get_pokemons(data, id)
 ul = document.querySelector('#liste-pokemon')
 for (let pokemon of pokemons) {
 	let li = document.createElement("li")
-	li.innerHTML = `${pokemon['nom']} <a href="pokemon.html?id=${pokemon['nom']}">lien</a> <img src="img/${pokemon['gif']}" height="20px">`
+	li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`
 	ul.appendChild(li)
 }
