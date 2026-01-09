@@ -2746,7 +2746,9 @@ let data = [
 		"gif": "133.gif",
 		"evolutions": [
 			"Évoli",
-			"Aquali"
+			"Aquali",
+			"Pyroli",
+			"Voltali"
 		]
 	},
 	{
@@ -2786,7 +2788,7 @@ let data = [
 		"gif": "135.gif",
 		"evolutions": [
 			"Évoli",
-			"Aquali"
+			"Voltali"
 		]
 	},
 	{
@@ -2806,7 +2808,7 @@ let data = [
 		"gif": "136.gif",
 		"evolutions": [
 			"Évoli",
-			"Aquali"
+			"Pyroli"
 		]
 	},
 	{
