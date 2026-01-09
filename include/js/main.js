@@ -7,7 +7,7 @@ if (ul && typeof types !== 'undefined') {
         let li = document.createElement("li");
         
         // On crée le lien et l'image
-        // Note : On ne met pas de style ici, le CSS s'occupe de la taille (.dropdown-content img)
+        // On ne met pas de style ici, le CSS met la taille (.dropdown-content img)
         li.innerHTML = `
             <a href="type.html?id=${type}">
                 <img src="img/types/${type}.png" alt="${type}">
@@ -17,16 +17,7 @@ if (ul && typeof types !== 'undefined') {
         ul.appendChild(li);
     }
 }
-function menuDeroulant(id)
-{
-    var element = document.getElementById(id);
-    var etat = element.style.display;
-     
-    if (etat == none)
-        element.style.display = 'block';
-    else
-        element.style.display = 'none';
-}
+
 
 
 
