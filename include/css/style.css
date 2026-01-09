@@ -215,9 +215,16 @@ div#boutons button:focus {
   box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
-div#boutons button:hover {
+div#boutons button.moins:hover {
     transform: scale(1.05);
     transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(100, 181, 246, 0.3);
+    border-color: rgba(100, 181, 246, 0.5);
+}
+
+div#boutons button.plus:hover {
+    transform: scale(1.05);
+    transform: translateY(5px);
     box-shadow: 0 8px 30px rgba(100, 181, 246, 0.3);
     border-color: rgba(100, 181, 246, 0.5);
 }
