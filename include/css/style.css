@@ -171,11 +171,61 @@ h1 { /* mess de bienvenu */
 
 div#boutons {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
-    gap: 30px;
+	gap: 20px;
+	margin-bottom: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+	list-style: none;
 }
 
+div#boutons button {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 14px;
+  font-family: "Pokemon Classic";
+}
+
+div#boutons button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+div#boutons button:hover {
+    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(100, 181, 246, 0.3);
+    border-color: rgba(100, 181, 246, 0.5);
+}
+
+div#boutons button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
 
 /*Pour rendre les élements de la liste invisibles tant que bouton non pressé*/
 .invisible {
