@@ -44,7 +44,7 @@ function format_types(types) {
 function format_evolutions(evolutions) {
 	str = "Évolutions : "
 	for (let evolution of evolutions) {
-		str += ` (<a href="pokemon.html?id=${evolution}">${evolution}</a>) `
+		str += ` (<a href="pokemon.html?id=${evolution}"><img src="img/${evolution}.gif" alt="${evolution}"></img></a>) `
 	}
 	return str
 }
