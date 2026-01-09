@@ -85,9 +85,8 @@ Ce projet est un site statique. Aucune installation de serveur (Node.js, PHP) n'
 ## 📝 Auteurs
 
 Projet réalisé dans le cadre de la SAÉ 105.
-Ulysse SOUCARET
-Mathis Roberdeau
+Ewan A, Gabriel A, Mathis R, Ulysse S
 
-profs :
+profs : BAROUDI, ZELFANI, GONZALEZ LORENZO
 
-*Gotta Catch 'Em All!*
+*Attrapez les tous!*
