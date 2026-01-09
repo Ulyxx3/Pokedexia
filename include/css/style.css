@@ -102,7 +102,7 @@ h1 { /* mess de bienvenu */
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	color: #f2f2f2;
+	color: #000000;
 }
 
 #liste-pokemon { /* changer en div peut-être */
@@ -244,11 +244,6 @@ div#boutons button:active {
 /* ===== STYLES PAR TYPE DE POKÉMON ===== */
 /* Ces classes (type-feu, type-eau, etc.) sont ajoutées par pokemon.js sur <html> */
 /* Chaque type a sa propre couleur et style */
-
-html.pokemon-page body {
-  background: #f9f9f9;
-  color: #333;
-}
 
 /* TYPE FEU */
 html.type-feu { --primary-color: #ff6b35; }
