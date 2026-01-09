@@ -17,7 +17,112 @@ if (ul && typeof types !== 'undefined') {
         ul.appendChild(li);
     }
 }
+// ==========================================
+// FONCTIONNALITÉ DE TRI (SORTING)
+// ==========================================
 
+// 1. Préparation des données (Nettoyage pour le tri)
+// On ajoute des propriétés numériques temporaires pour faciliter le tri sans casser l'affichage
+data.forEach((pokemon, index) => {
+    // Sauvegarde de l'ordre original (ID)
+    pokemon._id = index + 1;
+    
+    // Conversion "6,9 kg" -> 6.9 (Float)
+    pokemon._poidsVal = parseFloat(pokemon.poids.replace(',', '.').replace(/[^\d.-]/g, ''));
+    
+    // Conversion "0,7 m" -> 0.7 (Float)
+    pokemon._tailleVal = parseFloat(pokemon.taille.replace(',', '.').replace(/[^\d.-]/g, ''));
+});
+
+function createSortMenu() {
+    // Sélection de la barre de navigation
+    const navbarList = document.querySelector('#line');
+    
+    // Création du conteneur du menu déroulant (même structure HTML que pour les Types)
+    const li = document.createElement('li');
+    li.className = 'dropdown-container';
+    
+    li.innerHTML = `
+        <a href="#" class="menu-title">Trier par ▼</a>
+        <ul id="liste-tri" class="dropdown-content">
+            <li data-sort="id-asc">Numéro (Croissant)</li>
+            <li data-sort="id-desc">Numéro (Décroissant)</li>
+            <li data-sort="name-asc">Nom (A-Z)</li>
+            <li data-sort="name-desc">Nom (Z-A)</li>
+            <li data-sort="weight-asc">Poids (Leger - Lourd)</li>
+            <li data-sort="weight-desc">Poids (Lourd - Leger)</li>
+            <li data-sort="height-asc">Taille (Petit - Grand)</li>
+            <li data-sort="height-desc">Taille (Grand - Petit)</li>
+        </ul>
+    `;
+    
+    // Ajout à la navbar (avant ou après les types, ici on l'ajoute à la fin)
+    navbarList.appendChild(li);
+
+    // Ajout des écouteurs d'événements sur les options de tri
+    const sortItems = li.querySelectorAll('li[data-sort]');
+    sortItems.forEach(item => {
+        // Petit style curseur main pour indiquer que c'est cliquable
+        item.style.cursor = 'pointer'; 
+        
+        item.addEventListener('click', (e) => {
+            e.preventDefault(); // Empêche le remontage en haut de page
+            const sortType = e.target.getAttribute('data-sort');
+            applySort(sortType);
+        });
+    });
+}
+
+function applySort(sortType) {
+    switch (sortType) {
+        case 'id-asc':
+            data.sort((a, b) => a._id - b._id);
+            break;
+        case 'id-desc':
+            data.sort((a, b) => b._id - a._id);
+            break;
+        case 'name-asc':
+            data.sort((a, b) => a.nom.localeCompare(b.nom));
+            break;
+        case 'name-desc':
+            data.sort((a, b) => b.nom.localeCompare(a.nom));
+            break;
+        case 'weight-asc':
+            data.sort((a, b) => a._poidsVal - b._poidsVal);
+            break;
+        case 'weight-desc':
+            data.sort((a, b) => b._poidsVal - a._poidsVal);
+            break;
+        case 'height-asc':
+            data.sort((a, b) => a._tailleVal - b._tailleVal);
+            break;
+        case 'height-desc':
+            data.sort((a, b) => b._tailleVal - a._tailleVal);
+            break;
+    }
+
+    // Réinitialisation de l'affichage
+    // On remet le compteur à 20 pour ne pas surcharger le DOM si on était loin dans la liste
+    currentCount = itemsPerPage; 
+    
+    // On vide la liste actuelle et on relance le rendu
+    listePokemonUl.innerHTML = '';
+    renderPokemonList(currentCount);
+    
+    // Si une recherche est active, on doit aussi réappliquer le filtre
+    const searchVal = document.getElementById("search-input").value;
+    if(searchVal) {
+       // Déclenche l'événement input manuellement pour refiltrer
+       document.getElementById("search-input").dispatchEvent(new Event('input'));
+    }
+}
+
+// Lancer la création du menu
+createSortMenu();
+
+// ==========================================
+// LISTE DE POKÉMON AVEC PAGINATION ET RECHERCHE
+// ==========================================
 
 // Remplir la liste de pokemon avec le nom, le lien vers sa page et une image
 let listePokemonUl = document.querySelector('#liste-pokemon')
