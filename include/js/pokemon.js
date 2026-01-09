@@ -28,6 +28,15 @@ function get_pokemon(data) {
 		}
 	}
 }
+// Renvoie le pokémon en fontion de son nom (globalement la meme utilité que get_pokemon mais pour les évolutions)
+function get_pokemonEvo(name, all_data) {
+    for (let p of all_data) {
+        if (p['nom'] === name) {
+            return p;
+        }
+    }
+    return null; // si le pokémon n'est pas trouvé
+}
 
 // Renvoie une chaîne de caractères avec chaque type de pokémon
 // et un lien vers sa page
@@ -39,14 +48,19 @@ function format_types(types) {
 	return str
 }
 
-// Renvoie une chaîne de caractères avec chaque pokémon
+// Renvoie une chaîne de caractères avec chaque pokémon 
 // et un lien vers sa page
 function format_evolutions(evolutions) {
 	str = "Évolutions : "
-	for (let evolution of evolutions) {
-		str += ` (<a href="pokemon.html?id=${evolution}"><img src="img/${evolution}.gif" alt="${evolution}"></img></a>) `
+	for (let NomEvolution of evolutions) {
+		let EvolutionPokemon = get_pokemonEvo(NomEvolution, data);
+		if(EvolutionPokemon) {
+			let gif = EvolutionPokemon['gif'];
+			str += ` (<a href="pokemon.html?id=${NomEvolution}"><img height="50px" src="img/${gif}" alt="${NomEvolution}"></img></a>) `;
 	}
-	return str
+	
+	}
+	return str;
 }
 
 // Remplir les informations sur le pokemon
@@ -60,3 +74,22 @@ document.querySelector("#poids").textContent = "Poids : " + pokemon["poids"]
 document.querySelector("#noms").textContent = `Anglais : ${pokemon['nom_en']} ; Japonais : ${pokemon['nom_ja'][1]} (${pokemon['nom_ja'][0]})`
 document.querySelector("#types").innerHTML = format_types(pokemon["type"])
 document.querySelector("#evolutions").innerHTML = format_evolutions(pokemon["evolutions"])
+
+
+// Système de CSS pour chaque page de pokémon
+// Ajoute des classes au <html> pour que le CSS puisse cibler cette page Pokémon
+if (pokemon) {
+  // Normalise un type : convertit en minuscules et remplace les accents
+  function normalize(text) {
+    // convertit en minuscules, puis remplace é par e, puis remplace à et â par a
+    return text.toLowerCase().replace(/é/g, 'e').replace(/[àâ]/g, 'a');
+  }
+  
+  // Ajoute la classe 'pokemon-page' pour marquer une page de détail Pokémon
+  document.documentElement.classList.add('pokemon-page');
+  
+  // Ajoute une classe par type (ex: 'type-feu', 'type-eau')
+  pokemon.type.forEach(type => {
+    document.documentElement.classList.add('type-' + normalize(type));
+  });
+}
