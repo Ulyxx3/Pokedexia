@@ -169,6 +169,10 @@ h1 { /* mess de bienvenu */
     color: #000;
 }
 
+ul#boutons {
+    justify-content: center;
+}
+
 .button {
    display: block;
    margin : auto;
