@@ -180,7 +180,7 @@ div#boutons {
 	list-style: none;
 }
 
-div#boutons button {
+div#boutons button { /* Base récupérée sur un site internet dédié puis modifiée */
   align-items: center;
   appearance: none;
   background-color: #FCFCFD;
@@ -211,9 +211,6 @@ div#boutons button {
   font-family: "Pokemon Classic";
 }
 
-div#boutons button:focus {
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-}
 
 div#boutons button.moins:hover {
     transform: scale(1.05);
@@ -229,10 +226,7 @@ div#boutons button.plus:hover {
     border-color: rgba(100, 181, 246, 0.5);
 }
 
-div#boutons button:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
-}
+
 
 /*Pour rendre les élements de la liste invisibles tant que bouton non pressé*/
 .invisible {
