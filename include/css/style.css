@@ -169,6 +169,11 @@ h1 { /* mess de bienvenu */
     color: #000;
 }
 
+.button {
+   display: block;
+   margin : auto;
+}
+
 /*Pour rendre les élements de la liste invisibles tant que bouton non pressé*/
 .invisible {
     display: none;
