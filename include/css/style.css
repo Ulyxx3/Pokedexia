@@ -17,19 +17,6 @@ body {
 			font-size: 12px;
         }
 
-
-		/* Style pour le footer  qui ne marche actuellement PAS*/
-footer {
-            background: rgba(10, 14, 39, 0.9);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid rgba(100, 181, 246, 0.3);
-            color: #9e9e9e;
-            position: relative;
-            z-index: 1;
-        }
-
 nav {
     background-color: #b2d1ec;
     padding: 10px 20px;
