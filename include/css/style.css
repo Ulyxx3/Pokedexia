@@ -17,19 +17,6 @@ body {
 			font-size: 12px;
         }
 
-
-		/* Style pour le footer  qui ne marche actuellement PAS*/
-footer {
-            background: rgba(10, 14, 39, 0.9);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid rgba(100, 181, 246, 0.3);
-            color: #9e9e9e;
-            position: relative;
-            z-index: 1;
-        }
-
 nav {
     background-color: #b2d1ec;
     padding: 10px 20px;
@@ -124,6 +111,8 @@ h1 { /* mess de bienvenu */
 	justify-content: center;
 	gap: 20px;
 	margin-bottom: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
 	list-style: none;
 }
 
@@ -178,6 +167,11 @@ h1 { /* mess de bienvenu */
     padding: 8px 10px;
     background: #fff;
     color: #000;
+}
+
+/*Pour rendre les élements de la liste invisibles tant que bouton non pressé*/
+.invisible {
+    display: none;
 }
 
 /* faire bouger le gif que lors du survol */
