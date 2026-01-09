@@ -11,12 +11,24 @@ répertorie les 151 premiers pokémons et un peu plus... (MissingNo.)
 - affichage de la page de navigation en mosaique
 - Menu déroulant pour les types de pokémon
 
+A faire (potentiellement):
+- Tri des pokémon par poids
+- Tri des pokémon par taille
+- Ordre id ou Alphabétique
+- 
+
 # Visuels
 
+Page Index / Type :
 - Fond de chaque case avec un pokémon avec son type
 - Utilisation de la police des jeux Pokémon Rouge/Bleu/Jaune pour le site
 - Images pour représenter les types (venant des derniers jeux pokémon)
-- 
+
+Page Pokémon:
+- Couleur de la font en fonction du pokémon
+- Fond de la page selon le type du pokémon
+- Affichage des types en image
+- Affichage en gif des évolutions en bas de la page
 
 ## Profs :
 
