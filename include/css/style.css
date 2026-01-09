@@ -18,7 +18,7 @@ body {
         }
 
 
-		/* Style pour le footer qui ne marche actuellement PAS*/
+		/* Style pour le footer  qui ne marche actuellement PAS*/
 footer {
             background: rgba(10, 14, 39, 0.9);
             text-align: center;
@@ -30,39 +30,86 @@ footer {
             z-index: 1;
         }
 
-/*Changer la barre de nav, faire des images/logo cliquables et séparer les types par princiapl & secondaire*/
-nav { 
-	background-color: lightgray;
-	padding: 10px;
-	text-align: center;
-    margin-bottom: 20px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 1;
-}
-
-ul#line {
-    list-style: none;
+nav {
+    background-color: #b2d1ec;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 10px;
-}
-ul#liste-types li { /* à suppr, pour les listes */
-	display: inline-block;
-	padding-inline: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-ul#liste-types li a { /* à suppr, pour les listes */
-	text-decoration: none;
-	color: black;
-	font-weight: bold;
+ul#line {
+    list-style:none ;
+    display: flex;
+    gap: 15px;  
+}
+/*Changer la barre de nav, faire des images/logo cliquables et séparer les types par princiapl & secondaire*/
+/* Style du conteneur du menu */
+/* --- LE CONTENEUR PRINCIPAL --- */
+.dropdown-container {
+    position: relative; /* Indispensable pour positionner la liste en dessous */
+    display: inline-block;
+    cursor: pointer;
 }
 
-ul#liste-types li a:hover { /* à suppr, pour les listes */
-	color: red;
+/* Style du lien "Types de Pokémon" */
+.menu-title {
+    text-decoration: none;
+    color: white; /* Adapte selon ton thème */
+    padding: 10px;
+    font-size: 1.2rem;
 }
+
+/* --- LA LISTE DÉROULANTE (Cachée par défaut) --- */
+.dropdown-content {
+    display: none; /* CORRECTION 1 : On cache la liste par défaut */
+    position: absolute;
+    top: 100%; /* S'affiche juste en dessous du titre */
+    left: 0;
+    background-color: white; /* Fond blanc comme sur ton image */
+    min-width: 200px; /* On élargit la boîte */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3); /* Jolie ombre */
+    z-index: 1000; /* S'assure que ça passe DEVANT les autres éléments */
+    border-radius: 8px;
+    padding: 10px 0;
+    
+    /* CORRECTION 2 : On force l'affichage en colonne (1 par ligne) */
+    flex-direction: column; 
+    list-style: none;
+}
+
+/* --- L'EFFET DE SURVOL (HOVER) --- */
+/* Quand on survole le conteneur, on affiche le contenu */
+.dropdown-container:hover .dropdown-content {
+    display: flex; /* On passe de 'none' à 'flex' pour l'afficher */
+}
+
+/* --- LES ÉLÉMENTS DE LA LISTE --- */
+.dropdown-content li {
+    padding: 5px 10px;
+    text-align: center; /* Centre les images */
+    transition: background-color 0.2s;
+}
+
+.dropdown-content li:hover {
+    background-color: #8accd2; /* Petit effet gris au survol d'un type */
+}
+
+/* --- CORRECTION 3 : TAILLE DES IMAGES --- */
+/* On cible les images générées par le JS */
+.dropdown-content img {
+    width: 120px; /* On force une largeur plus grande (ajuste selon tes goûts) */
+    height: auto; /* Garde les proportions */
+    display: block; /* Évite les espaces fantômes sous l'image */
+    margin: 0 auto; /* Centre l'image */
+}
+
+
+
 
 h1 { /* mess de bienvenu */
 	text-align: center;
@@ -133,3 +180,4 @@ h1 { /* mess de bienvenu */
     color: #000;
 }
 
+/* faire bouger le gif que lors du survol */
