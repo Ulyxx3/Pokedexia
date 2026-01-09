@@ -63,3 +63,19 @@ document.querySelector("#evolutions").innerHTML = format_evolutions(pokemon["evo
 
 
 // Système de CSS pour chaque page de pokémon
+// Ajoute des classes au <html> pour que le CSS puisse cibler cette page Pokémon
+if (pokemon) {
+  // Normalise un type : convertit en minuscules et remplace les accents
+  function normalize(text) {
+    // convertit en minuscules, puis remplace é par e, puis remplace à et â par a
+    return text.toLowerCase().replace(/é/g, 'e').replace(/[àâ]/g, 'a');
+  }
+  
+  // Ajoute la classe 'pokemon-page' pour marquer une page de détail Pokémon
+  document.documentElement.classList.add('pokemon-page');
+  
+  // Ajoute une classe par type (ex: 'type-feu', 'type-eau')
+  pokemon.type.forEach(type => {
+    document.documentElement.classList.add('type-' + normalize(type));
+  });
+}
