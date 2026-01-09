@@ -42,7 +42,10 @@ ul#line {
     display: inline-block;
     cursor: pointer;
 }
-
+.dropdown-content li {
+    font-size: 10px; /* Adapte la taille de police si besoin */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
 /* Style du lien "Types de Pokémon" */
 .menu-title {
     text-decoration: none;
