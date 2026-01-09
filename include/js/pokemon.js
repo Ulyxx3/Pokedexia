@@ -43,7 +43,7 @@ function get_pokemonEvo(name, all_data) {
 function format_types(types) {
 	let str = "Types : "
 	for (let type of types) {
-		str += ` (<a href="type.html?id=${type}"><img src="img/types/${type}.png" alt="${type}"></img></a>) `
+		str += ` <a href="type.html?id=${type}"><img src="img/types/${type}.png" alt="${type}"></img></a> `
 	}
 	return str
 }
@@ -56,7 +56,7 @@ function format_evolutions(evolutions) {
 		let EvolutionPokemon = get_pokemonEvo(NomEvolution, data);
 		if(EvolutionPokemon) {
 			let gif = EvolutionPokemon['gif'];
-			str += ` (<a href="pokemon.html?id=${NomEvolution}"><img height="50px" src="img/${gif}" alt="${NomEvolution}"></img></a>) `;
+			str += ` <a href="pokemon.html?id=${NomEvolution}"><img height="50px" src="img/${gif}" alt="${NomEvolution}"></img></a> `;
 	}
 	
 	}
