@@ -63,9 +63,3 @@ document.querySelector("#evolutions").innerHTML = format_evolutions(pokemon["evo
 
 
 // Système de CSS pour chaque page de pokémon
-const params = new URLSearchParams(window.location.search);
-const id = params.get('id');
-if (id) {
-  document.documentElement.classList.add('pokemon-page');
-  document.documentElement.dataset.pokemon = id.toLowerCase();
-}
