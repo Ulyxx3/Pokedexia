@@ -28,6 +28,15 @@ function get_pokemon(data) {
 		}
 	}
 }
+// Renvoie le pokémon en fontion de son nom (globalement la meme utilité que get_pokemon mais pour les évolutions)
+function get_pokemonEvo(name, all_data) {
+    for (let p of all_data) {
+        if (p['nom'] === name) {
+            return p;
+        }
+    }
+    return null; // si le pokémon n'est pas trouvé
+}
 
 // Renvoie une chaîne de caractères avec chaque type de pokémon
 // et un lien vers sa page
@@ -39,14 +48,19 @@ function format_types(types) {
 	return str
 }
 
-// Renvoie une chaîne de caractères avec chaque pokémon
+// Renvoie une chaîne de caractères avec chaque pokémon 
 // et un lien vers sa page
 function format_evolutions(evolutions) {
 	str = "Évolutions : "
-	for (let evolution of evolutions) {
-		str += ` (<a href="pokemon.html?id=${evolution}"><img src="img/${evolution}.gif" alt="${evolution}"></img></a>) `
+	for (let NomEvolution of evolutions) {
+		let EvolutionPokemon = get_pokemonEvo(NomEvolution, data);
+		if(EvolutionPokemon) {
+			let gif = EvolutionPokemon['gif'];
+			str += ` (<a href="pokemon.html?id=${NomEvolution}"><img height="50px" src="img/${gif}" alt="${NomEvolution}"></img></a>) `;
 	}
-	return str
+	
+	}
+	return str;
 }
 
 // Remplir les informations sur le pokemon
