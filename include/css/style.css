@@ -111,6 +111,8 @@ h1 { /* mess de bienvenu */
 	justify-content: center;
 	gap: 20px;
 	margin-bottom: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
 	list-style: none;
 }
 
@@ -165,6 +167,11 @@ h1 { /* mess de bienvenu */
     padding: 8px 10px;
     background: #fff;
     color: #000;
+}
+
+/*Pour rendre les élements de la liste invisibles tant que bouton non pressé*/
+.invisible {
+    display: none;
 }
 
 /* faire bouger le gif que lors du survol */
