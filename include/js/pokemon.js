@@ -60,3 +60,12 @@ document.querySelector("#poids").textContent = "Poids : " + pokemon["poids"]
 document.querySelector("#noms").textContent = `Anglais : ${pokemon['nom_en']} ; Japonais : ${pokemon['nom_ja'][1]} (${pokemon['nom_ja'][0]})`
 document.querySelector("#types").innerHTML = format_types(pokemon["type"])
 document.querySelector("#evolutions").innerHTML = format_evolutions(pokemon["evolutions"])
+
+
+// Système de CSS pour chaque page de pokémon
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+if (id) {
+  document.documentElement.classList.add('pokemon-page');
+  document.documentElement.dataset.pokemon = id.toLowerCase();
+}
