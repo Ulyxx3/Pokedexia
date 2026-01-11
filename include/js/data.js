@@ -3120,8 +3120,8 @@ let data = [
 		"taille": "3,3 m",
 		"poids": "10 kg",
 		"type": [
-			"Normal",
-			"Vol"
+			"Vol",
+			"Normal"
 		],
 		"png": "152.png",
 		"nom_en": "MissingNo.",
