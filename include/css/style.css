@@ -229,6 +229,21 @@ div#boutons button.plus:hover {
     border-color: rgba(100, 181, 246, 0.5);
 }
 
+html.pokemon-page body {
+    font-family: 'Pokemon Classic';
+    background: #d1e3ef;
+    color: #000000;
+    line-height: 1.6;
+    min-height: 100vh;
+    font-size: 12px;
+    padding: 20px;
+}
+
+
+
+
+
+
 
 
 /*Pour rendre les élements de la liste invisibles tant que bouton non pressé*/
