@@ -185,20 +185,29 @@ function renderPokemonList(count) {
 function updateButtons() {
     const plusBtn = document.querySelector('.plus')
     const moinsBtn = document.querySelector('.moins')
+    // Si les boutons n'existent pas sur cette page, rien à faire
+    if (!plusBtn || !moinsBtn) return
     moinsBtn.disabled = currentCount <= itemsPerPage
     plusBtn.disabled = currentCount >= data.length
 }
 
 // Écouteurs pour les boutons
-document.querySelector('.plus').addEventListener('click', () => {
-    currentCount = Math.min(currentCount + itemsPerPage, data.length)
-    renderPokemonList(currentCount)
-})
+const plusBtn = document.querySelector('.plus')
+const moinsBtn = document.querySelector('.moins')
 
-document.querySelector('.moins').addEventListener('click', () => {
-    currentCount = Math.max(currentCount - itemsPerPage, itemsPerPage)
-    renderPokemonList(currentCount)
-})
+if (plusBtn) {
+    plusBtn.addEventListener('click', () => {
+        currentCount = Math.min(currentCount + itemsPerPage, data.length)
+        renderPokemonList(currentCount)
+    })
+}
+
+if (moinsBtn) {
+    moinsBtn.addEventListener('click', () => {
+        currentCount = Math.max(currentCount - itemsPerPage, itemsPerPage)
+        renderPokemonList(currentCount)
+    })
+}
 
 // Affichage initial
 renderPokemonList(currentCount)

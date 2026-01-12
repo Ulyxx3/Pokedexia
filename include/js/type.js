@@ -111,15 +111,22 @@ function updateButtons() {
 }
 
 // Écouteurs pour les boutons
-document.querySelector('.plus').addEventListener('click', () => {
-    currentCount = Math.min(currentCount + itemsPerPage, pokemons.length)
-    renderPokemonList(currentCount)
-})
+const plusBtn = document.querySelector('.plus')
+const moinsBtn = document.querySelector('.moins')
 
-document.querySelector('.moins').addEventListener('click', () => {
-    currentCount = Math.max(currentCount - itemsPerPage, itemsPerPage)
-    renderPokemonList(currentCount)
-})
+if (plusBtn) {
+    plusBtn.addEventListener('click', () => {
+        currentCount = Math.min(currentCount + itemsPerPage, pokemons.length)
+        renderPokemonList(currentCount)
+    })
+}
+
+if (moinsBtn) {
+    moinsBtn.addEventListener('click', () => {
+        currentCount = Math.max(currentCount - itemsPerPage, itemsPerPage)
+        renderPokemonList(currentCount)
+    })
+}
 
 // Affichage initial
 renderPokemonList(currentCount)
