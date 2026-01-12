@@ -17,6 +17,7 @@ if (ul && typeof types !== 'undefined') {
         ul.appendChild(li);
     }
 }
+
 // ==========================================
 // FONCTIONNALITÉ DE TRI (SORTING)
 // ==========================================
@@ -123,8 +124,8 @@ createSortMenu();
 // ==========================================
 // LISTE DE POKÉMON AVEC PAGINATION ET RECHERCHE
 // ==========================================
-
 // Remplir la liste de pokemon avec le nom, le lien vers sa page et une image
+
 let listePokemonUl = document.querySelector('#liste-pokemon')
 
 // Pagination: afficher 20 par 20
@@ -143,7 +144,7 @@ function updateStatus() {
 }
 
 // Fonction pour afficher les premiers 'count' Pokémon
-function renderPokemonList(count) {
+function renderPokemonList(count) { 
     listePokemonUl.innerHTML = '' // Vide la liste
     for (let i = 0; i < count && i < data.length; i++) {
         let pokemon = data[i]
@@ -194,6 +195,7 @@ searchInput.addEventListener("input", function() {
         let text = link.textContent.toLowerCase()
         if (text.includes(filter)) {
             link.parentElement.style.display = ""
+
         } else {
             link.parentElement.style.display = "none"
         }   
