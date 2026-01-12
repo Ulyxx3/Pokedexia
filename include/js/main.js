@@ -228,6 +228,10 @@ searchInput.addEventListener("input", function() {
         }
     });
 })
+
+//fix le fait que tous les pokémons soient affichés après une recherche
+
+
 // Styliser la barre de recherche avec CSS ?
 
 // Styles de base pour le champ de recherche (dev avec le cul)
