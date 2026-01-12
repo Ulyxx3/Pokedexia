@@ -36,31 +36,30 @@ let urlParams = new URLSearchParams(queryString)
 let id = urlParams.get('id')
 
 // Remplir la page
-// Ce code est identique à celui de main.js
 document.querySelector("title").textContent += id
 document.querySelector("h1").textContent = id
 let pokemons = get_pokemons(data, id)
 ul = document.querySelector('#liste-pokemon')
-for (let pokemon of pokemons) {
-	let li = document.createElement("li")
-	li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`
-	ul.appendChild(li)
-}
+
 let listePokemonUl = document.querySelector('#liste-pokemon')
 
 // Pagination: afficher 20 par 20
 const itemsPerPage = 20
-let currentCount = Math.min(itemsPerPage, data.length) // Commence à 20 ou moins
+let currentCount = Math.min(itemsPerPage, pokemons.length) // Commence à 20 ou moins
 
-// Indicateur simple : "X/Y Pokémon affichés"
+// Indicateur simple : "X/Y Pokémon affichés" (ajouter seulement si #boutons existe)
 let statusDiv = document.createElement('span')
 statusDiv.id = 'status'
 statusDiv.style.marginLeft = '10px'
-document.querySelector('#boutons').appendChild(statusDiv)
+const boutonsContainer = document.querySelector('#boutons')
+if (boutonsContainer) {
+    boutonsContainer.appendChild(statusDiv)
+}
 
 // Fonction pour mettre à jour l'indicateur
 function updateStatus() {
-    statusDiv.textContent = `${currentCount}/${data.length} Pokémon affichés`
+    if (!statusDiv.parentElement) return
+    statusDiv.textContent = `${currentCount}/${pokemons.length} Pokémon affichés`
 }
 
 // Fonction pour afficher les premiers 'count' Pokémon
@@ -69,9 +68,9 @@ function createListItems() {
     // Supprime les anciens éléments
     while (listePokemonUl.firstChild) listePokemonUl.removeChild(listePokemonUl.firstChild);
 
-    // Crée un <li> par Pokémon mais les marque cachés par défaut
-    for (let i = 0; i < data.length; i++) {
-        let pokemon = data[i];
+    // Crée un <li> par Pokémon du type mais les marque cachés par défaut
+    for (let i = 0; i < pokemons.length; i++) {
+        let pokemon = pokemons[i];
         let li = document.createElement('li');
         li.classList.add('pokemon-hidden');
         li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`;
@@ -105,13 +104,15 @@ function renderPokemonList(count) {
 function updateButtons() {
     const plusBtn = document.querySelector('.plus')
     const moinsBtn = document.querySelector('.moins')
+    // Si les boutons n'existent pas sur cette page, rien à faire
+    if (!plusBtn || !moinsBtn) return
     moinsBtn.disabled = currentCount <= itemsPerPage
-    plusBtn.disabled = currentCount >= data.length
+    plusBtn.disabled = currentCount >= pokemons.length
 }
 
 // Écouteurs pour les boutons
 document.querySelector('.plus').addEventListener('click', () => {
-    currentCount = Math.min(currentCount + itemsPerPage, data.length)
+    currentCount = Math.min(currentCount + itemsPerPage, pokemons.length)
     renderPokemonList(currentCount)
 })
 
