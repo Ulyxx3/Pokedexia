@@ -106,8 +106,8 @@ function applySort(sortType) {
     // On remet le compteur à 20 pour ne pas surcharger le DOM si on était loin dans la liste
     currentCount = itemsPerPage; 
     
-    // On vide la liste actuelle et on relance le rendu
-    listePokemonUl.innerHTML = '';
+    // Rebuild list items to follow the new sorted order, then render
+    createListItems();
     renderPokemonList(currentCount);
     
     // Si une recherche est active, on doit aussi réappliquer le filtre
@@ -144,16 +144,41 @@ function updateStatus() {
 }
 
 // Fonction pour afficher les premiers 'count' Pokémon
-function renderPokemonList(count) { 
-    listePokemonUl.innerHTML = '' // Vide la liste
-    for (let i = 0; i < count && i < data.length; i++) {
-        let pokemon = data[i]
-        let li = document.createElement('li')
-        li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`
-        listePokemonUl.appendChild(li)
+// Crée tous les éléments de la liste (une seule fois ou après tri)
+function createListItems() {
+    // Supprime les anciens éléments
+    while (listePokemonUl.firstChild) listePokemonUl.removeChild(listePokemonUl.firstChild);
+
+    // Crée un <li> par Pokémon mais les marque cachés par défaut
+    for (let i = 0; i < data.length; i++) {
+        let pokemon = data[i];
+        let li = document.createElement('li');
+        li.classList.add('pokemon-hidden');
+        li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`;
+        listePokemonUl.appendChild(li);
     }
-    updateButtons() // Met à jour les boutons
-    updateStatus() // Met à jour l'indicateur
+}
+
+// Affiche (via classes) les premiers 'count' éléments
+function renderPokemonList(count) { 
+    // Si les éléments n'existent pas encore ou ont changé, crée-les
+    if (listePokemonUl.children.length !== data.length) {
+        createListItems();
+    }
+
+    const items = listePokemonUl.children;
+    for (let i = 0; i < items.length; i++) {
+        if (i < count) {
+            items[i].classList.remove('pokemon-hidden');
+            items[i].classList.add('pokemon-visible');
+        } else {
+            items[i].classList.remove('pokemon-visible');
+            items[i].classList.add('pokemon-hidden');
+        }
+    }
+
+    updateButtons(); // Met à jour les boutons
+    updateStatus(); // Met à jour l'indicateur
 }
 
 // Fonction pour activer/désactiver les boutons
@@ -189,17 +214,19 @@ searchWrapper.appendChild(searchInput)
 listePokemonUl.parentElement.insertBefore(searchWrapper, listePokemonUl) // Insère avant la liste
 
 searchInput.addEventListener("input", function() {
-    let filter = searchInput.value.toLowerCase()
-    let pokemonLinks = document.querySelectorAll('.pokemon-link')
+    let filter = searchInput.value.toLowerCase();
+    let pokemonLinks = document.querySelectorAll('.pokemon-link');
     pokemonLinks.forEach(function(link) {
-        let text = link.textContent.toLowerCase()
+        let text = link.textContent.toLowerCase();
+        const li = link.parentElement;
         if (text.includes(filter)) {
-            link.parentElement.style.display = ""
-
+            li.classList.remove('pokemon-hidden');
+            li.classList.add('pokemon-visible');
         } else {
-            link.parentElement.style.display = "none"
-        }   
-    })
+            li.classList.remove('pokemon-visible');
+            li.classList.add('pokemon-hidden');
+        }
+    });
 })
 // Styliser la barre de recherche avec CSS ?
 
