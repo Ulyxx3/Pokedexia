@@ -41,8 +41,6 @@ document.querySelector("h1").textContent = id
 let pokemons = get_pokemons(data, id)
 ul = document.querySelector('#liste-pokemon')
 
-let listePokemonUl = document.querySelector('#liste-pokemon')
-
 // Pagination: afficher 20 par 20
 const itemsPerPage = 20
 let currentCount = Math.min(itemsPerPage, pokemons.length) // Commence à 20 ou moins
@@ -66,7 +64,7 @@ function updateStatus() {
 // Crée tous les éléments de la liste (une seule fois ou après tri)
 function createListItems() {
     // Supprime les anciens éléments
-    while (listePokemonUl.firstChild) listePokemonUl.removeChild(listePokemonUl.firstChild);
+    while (ul.firstChild) ul.removeChild(ul.firstChild);
 
     // Crée un <li> par Pokémon du type mais les marque cachés par défaut
     for (let i = 0; i < pokemons.length; i++) {
@@ -74,18 +72,18 @@ function createListItems() {
         let li = document.createElement('li');
         li.classList.add('pokemon-hidden');
         li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`;
-        listePokemonUl.appendChild(li);
+        ul.appendChild(li);
     }
 }
 
 // Affiche (via classes) les premiers 'count' éléments
 function renderPokemonList(count) { 
     // Si les éléments n'existent pas encore ou ont changé, crée-les
-    if (listePokemonUl.children.length !== data.length) {
+    if (ul.children.length !== pokemons.length) {
         createListItems();
     }
 
-    const items = listePokemonUl.children;
+    const items = ul.children;
     for (let i = 0; i < items.length; i++) {
         if (i < count) {
             items[i].classList.remove('pokemon-hidden');
