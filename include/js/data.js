@@ -1,5 +1,5 @@
 // Types des pokémon
-let types = ['Eau', 'Combat', 'Sol', 'Glace', 'Psy', 'Poison', 'Feu', 'Dragon', 'Roche', 'Normal', 'Fée', 'Insecte', 'Plante', 'Spectre', 'Vol', 'Électrik', 'Acier']
+let types = ['Normal', 'Feu', 'Eau', 'Électrik', 'Plante', 'Glace', 'Combat', 'Poison',  'Sol', 'Vol', 'Psy', 'Insecte', 'Roche', 'Spectre', 'Dragon', 'Acier', 'Fée']
 
 // Tous les pokémon avec leurs caractéristiques
 let data = [
