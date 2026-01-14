@@ -125,8 +125,13 @@ h2 { /* description */
 	margin-bottom: 20px;
 	color: #000000;
     font-size: small;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #242424;
+    border-radius: 30px;
+    padding: 10px;
 }
 
 #liste-pokemon { /* changer en div peut-être */
@@ -420,6 +425,8 @@ html.pokemon-page .description {
 .invisible {
     display: none;
 }
+
+
 
 /* ===== STYLES PAR TYPE DE POKÉMON ===== */
 /* Ces classes (type-feu, type-eau, etc.) sont ajoutées par pokemon.js sur <html> */
