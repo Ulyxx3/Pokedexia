@@ -34,7 +34,6 @@ function pickRandomPokemon() {
     inputElement.focus();
 
     // Mise à jour de l'image
-    // ATTENTION : Assure-toi que tes images sont dans un dossier "images/"
     // ou modifie le chemin ci-dessous.
     imgElement.src = `img/${currentPokemon.png}`; 
     imgElement.classList.remove('revealed');
@@ -87,11 +86,11 @@ function handleSuccess() {
 
 // Cas d'erreur
 function handleError() {
-    messageElement.textContent = "Ce n'est pas ce Pokémon... Essaie encore !";
+    messageElement.textContent = `Ce n'est pas ${inputElement.value}... Essaie encore !`;
     messageElement.className = 'error';
     messageElement.classList.remove('hidden');
     
-    // Animation de "secousse" sur l'input
+    // Animation de "secousse" sur l'input      
     inputElement.animate([
         { transform: 'translateX(0)' },
         { transform: 'translateX(-10px)' },
