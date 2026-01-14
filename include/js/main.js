@@ -153,6 +153,7 @@ function createListItems() {
         let pokemon = data[i];
         let li = document.createElement('li');
         li.classList.add('pokemon-hidden');
+        // Ajoute le lien avec le nom et l'image
         li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`;
         listePokemonUl.appendChild(li);
     }
@@ -164,7 +165,7 @@ function renderPokemonList(count) {
     if (listePokemonUl.children.length !== data.length) {
         createListItems();
     }
-
+// Met à jour la visibilité des éléments
     const items = listePokemonUl.children;
     for (let i = 0; i < items.length; i++) {
         if (i < count) {
@@ -194,16 +195,16 @@ function updateButtons() {
 const plusBtn = document.querySelector('.plus')
 const moinsBtn = document.querySelector('.moins')
 
-if (plusBtn) {
+if (plusBtn) { 
     plusBtn.addEventListener('click', () => {
-        currentCount = Math.min(currentCount + itemsPerPage, data.length)
+        currentCount = Math.min(currentCount + itemsPerPage, data.length) // Ne dépasse pas la longueur totale
         renderPokemonList(currentCount)
     })
 }
 
 if (moinsBtn) {
     moinsBtn.addEventListener('click', () => {
-        currentCount = Math.max(currentCount - itemsPerPage, itemsPerPage)
+        currentCount = Math.max(currentCount - itemsPerPage, itemsPerPage) // Ne descend pas en dessous de itemsPerPage (20)
         renderPokemonList(currentCount)
     })
 }
@@ -221,12 +222,14 @@ searchWrapper.id = "search-wrapper"
 searchWrapper.appendChild(searchInput)
 listePokemonUl.parentElement.insertBefore(searchWrapper, listePokemonUl) // Insère avant la liste
 
+// Écouteur pour la recherche
 searchInput.addEventListener("input", function() {
-    let filter = searchInput.value.toLowerCase();
-    let pokemonLinks = document.querySelectorAll('.pokemon-link');
-    pokemonLinks.forEach(function(link) {
-        let text = link.textContent.toLowerCase();
-        const li = link.parentElement;
+    let filter = searchInput.value.toLowerCase(); // Texte recherché en minuscules
+    let pokemonLinks = document.querySelectorAll('.pokemon-link'); // Tous les liens de pokémon
+    pokemonLinks.forEach(function(link) { // Pour chaque lien
+        let text = link.textContent.toLowerCase(); // Texte du lien en minuscules
+        const li = link.parentElement; 
+        // Affiche ou cache selon la correspondance
         if (text.includes(filter)) {
             li.classList.remove('pokemon-hidden');
             li.classList.add('pokemon-visible');

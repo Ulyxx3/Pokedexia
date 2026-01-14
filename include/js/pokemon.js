@@ -1,9 +1,9 @@
 // Remplir le menu avec les types de pokémon
 let ul = document.querySelector('#liste-types');
 
-if (ul && typeof types !== 'undefined') {
-    for (let type of types) {
-        let li = document.createElement("li");
+if (ul && typeof types !== 'undefined') { // Vérifie que la variable types est définie
+    for (let type of types) { 
+        let li = document.createElement("li"); // Crée un élément de liste pour chaque type
         
         // On crée le lien et l'image
         // Note : On ne met pas de style ici, le CSS s'occupe de la taille (.dropdown-content img)
@@ -29,6 +29,7 @@ function get_pokemon(data) {
 	}
 }
 // Renvoie le pokémon en fontion de son nom (globalement la meme utilité que get_pokemon mais pour les évolutions)
+// juste j'arrivais pas a utiliser get_pokemon pour les évolutions donc j'ai fait une autre fonction
 function get_pokemonEvo(name, all_data) {
     for (let p of all_data) {
         if (p['nom'] === name) {
@@ -53,9 +54,9 @@ function format_types(types) {
 function format_evolutions(evolutions) {
 	str = "Évolutions : "
 	for (let NomEvolution of evolutions) {
-		let EvolutionPokemon = get_pokemonEvo(NomEvolution, data);
-		if(EvolutionPokemon) {
-			let gif = EvolutionPokemon['gif'];
+		let EvolutionPokemon = get_pokemonEvo(NomEvolution, data); // Récupère les données du pokémon d'évolution
+		if(EvolutionPokemon) { 
+			let gif = EvolutionPokemon['gif']; // Récupère le gif du pokémon d'évolution
 			str += ` <a href="pokemon.html?id=${NomEvolution}"><img height="50px" src="img/${gif}" alt="${NomEvolution}"></img></a> `;
 	}
 	
