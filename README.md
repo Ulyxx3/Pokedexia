@@ -4,15 +4,15 @@ Ce projet est un Pokédex interactif réalisé dans le cadre de la **SAÉ 105** 
 
 Le site est conçu en **HTML, CSS et JavaScript pur**, et s'appuie sur une base de données locale (`data.js`).
 
-## 🚀 Fonctionnalités Principales
+## Fonctionnalités Principales
 
-### 🔍 Navigation et Recherche
+### Navigation et Recherche
 
 * **Liste complète** : Affichage dynamique de tous les Pokémon de la première génération (de Bulbizarre à MissingNo.) sur la page d'accueil.
 * **Barre de recherche en temps réel** : Un champ de saisie permet de filtrer instantanément les Pokémon par leur nom (sans rechargement de page).
 * **Menu déroulant interactif** : La barre de navigation inclut un menu "Types de Pokémon" généré dynamiquement, affichant les icônes des types pour une navigation rapide.
 
-### 📄 Fiches Détaillées (Single Page)
+### Fiches Détaillées (Single Page)
 
 Chaque Pokémon possède sa propre page dédiée (`pokemon.html`) générée dynamiquement via des paramètres d'URL (`?id=Name`), affichant :
 
@@ -25,18 +25,18 @@ Chaque Pokémon possède sa propre page dédiée (`pokemon.html`) générée dyn
 
 * Une page dédiée (`type.html`) permet de lister uniquement les Pokémon appartenant à un type spécifique (ex: Eau, Feu, Spectre).
 
-## 🎨 Fonctionnalités Visuelles et UX
+##  Fonctionnalités Visuelles et UX
 
-### 🌈 Thème Dynamique (Adaptive Coloring)
+###  Thème Dynamique (Adaptive Coloring)
 
 L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un script JS et des variables CSS, l'ambiance colorée change sur la page de détail :
 
 * **Background** : Dégradé de couleur correspondant au type principal (ex: Rouge/Orange pour Feu, Bleu pour Eau).
 * **Interface** : Les titres et cadres s'harmonisent avec la couleur dominante du type.
 
-### ✨ Animations et Style
+###  Animations et Style
 
-* **Font Retro** : Utilisation de la police personnalisée "Pokemon Classic" pour un aspect authentique jeu vidéo.
+* **Font** : Utilisation de la police personnalisée "Pokemon Classic" pour un aspect authentique jeu vidéo.
 * **Effets de survol (Hover)** :
 * Agrandissement (`scale`) et ombres portées sur les cartes Pokémon.
 * Apparition fluide du menu déroulant dans la navbar.
@@ -44,7 +44,7 @@ L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un
 
 * **Images & GIFs** : Utilisation mixte d'images statiques pour les listes et de GIFs animés pour les évolutions.
 
-## 🛠️ Structure du Projet
+## Structure du Projet
 
 ```
 .
@@ -64,7 +64,7 @@ L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un
 
 ```
 
-## 💻 Technologies utilisées
+## Technologies utilisées
 
 * **HTML5** : Structure sémantique.
 * **CSS3** : Flexbox pour la mise en page, CSS Variables pour le theming dynamique, `@font-face`.
@@ -75,14 +75,18 @@ L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un
 
 
 
-## 🔧 Installation
+## Bibliographie
 
-Ce projet est un site statique. Aucune installation de serveur (Node.js, PHP) n'est nécessaire.
+- Documentation HTML CSS JS de Mozilla : https://developer.mozilla.org/fr/docs/Web
+- 
+- 
+- 
+- 
+- 
+- 
 
-1. Cloner le dépôt ou télécharger les fichiers.
-2. Ouvrir le fichier `index.html` dans n'importe quel navigateur web moderne (Chrome, Firefox, Edge).
 
-## 📝 Auteurs
+## Auteurs
 
 Projet réalisé dans le cadre de la SAÉ 105.
 Ewan A, Gabriel A, Mathis R, Ulysse S
