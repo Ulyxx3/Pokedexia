@@ -439,8 +439,8 @@ html.type-electrik h1, html.type-electrik #informations { color: #8b6914; }
 html.type-electrik #image { background: rgba(255, 208, 52, 0.1); padding: 15px; border-radius: 10px; }
 
 /* TYPE NORMAL */
-html.type-normal { --primary-color: #c9c9c9; }
-html.type-normal body { background: linear-gradient(135deg, #e8e8e8 0%, #c9c9c9 100%); }
+html.type-normal { --primary-color: #9d9d9d; }
+html.type-normal body { background: linear-gradient(135deg, #e8e8e8 0%, #9c9c9c 100%); }
 html.type-normal h1, html.type-normal #informations { color: #333; }
 html.type-normal #image { background: rgba(201, 201, 201, 0.1); padding: 15px; border-radius: 10px; }
 
@@ -519,15 +519,11 @@ html.type-acier #image { background: rgba(191, 199, 209, 0.1); padding: 15px; bo
 
 /* Per-type classes (names normalized by JS) */
 
-html.pokemon-page body, html.pokemon-page .page, html.type-feu, .pokemon-card { background: linear-gradient(135deg,#ffb057,#ff5a36); color:#fff }
-html.type-eau .pokemon-card { background: linear-gradient(135deg,#8ad0ff,#3aa0ff); color:#04283b }
+/*html.pokemon-page body, html.pokemon-page .page, html.type-feu, .pokemon-card { background: linear-gradient(135deg,#ffb057,#ff5a36); color:#fff }
+html.type-eau .pokemon-card { background: linear-gradient(135deg,#8ad0ff,#3aa0ff); color:#04283b }*/
 
-html.pokemon-page body, html.pokemon-page .page,html.type-plante, .pokemon-card { background: linear-gradient(135deg,#c7f59a,#5fc271); color:#042a0b }
+/*html.pokemon-page body, html.pokemon-page .page,html.type-plante, .pokemon-card { background: linear-gradient(135deg,#c7f59a,#5fc271); color:#042a0b } */
 
 
-html.pokemon-page body, html.pokemon-page .page, .pokemon-page { /* Les sélécteurs pour la page (important) */
-  background: #d1e3ef;
-
-  color: #111;
-}
+/*  html.pokemon-page body, html.pokemon-page .page, .pokemon-page {}  Les sélécteurs pour la page (important) */
 
