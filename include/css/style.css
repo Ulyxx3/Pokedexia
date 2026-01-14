@@ -112,14 +112,14 @@ ul#line {
 
 
 
-h1 { /* mess de bienvenue */
+h1 { /* mess de bienvenu */
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	color: #000000;
 }
 
-h2 { /* description */
+h2 { /* mess de bienvenu */
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -283,39 +283,19 @@ html.pokemon-page .pokemon-name {
 }
 
 html.pokemon-page .types {
-    display: flex;
-    gap: 15px;
     margin-top: 8px;
-    align-items: center;
+    align-items: right;
     flex-wrap: nowrap;
     height: 50px;
     width: auto;
     scale: 0.5;
+    flex: none; 
 }
 
 /* Forcer l'affichage horizontal des types et des évolutions */
-html.pokemon-page #types,
 html.pokemon-page #evolutions {
     display: flex;
     gap: 20px;
-    align-items: center;
-}
-
-html.pokemon-page .type-badge {
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: capitalize;
-}
-
-html.pokemon-page .type-fire {
-    background: #ff7f50;
-}
-
-html.pokemon-page .type-flying {
-    background: #5eb9ff;
 }
 
 html.pokemon-page .main-content {
@@ -405,6 +385,10 @@ html.pokemon-page .description {
     line-height: 1.6;
 }
 
+
+
+
+
 @media (max-width: 768px) {
     html.pokemon-page .main-content {
         grid-template-columns: 1fr;
@@ -421,109 +405,16 @@ html.pokemon-page .description {
     display: none;
 }
 
+/* faire bouger le gif que lors du survol */
+
 /* ===== STYLES PAR TYPE DE POKÉMON ===== */
 /* Ces classes (type-feu, type-eau, etc.) sont ajoutées par pokemon.js sur <html> */
 /* Chaque type a sa propre couleur et style */
 
 
-/* TYPE FEU */
-html.type-feu { --primary-color: #ff6b35; }
-html.type-feu body { background: linear-gradient(135deg, #ffb380 0%, #ff6b35 100%); }
-html.type-feu h1, html.type-feu #informations { color: #8b2e00; }
-html.type-feu #image { background: rgba(255, 107, 53, 0.1); padding: 15px; border-radius: 10px; }
+/* Système de changement de couleur du text à MODIFIER */
+html.pokemon-page {--primary-text-color: var(--primary-color, #2d3561);}
 
-/* TYPE EAU */
-html.type-eau { --primary-color: #3aa0ff; }
-html.type-eau body { background: linear-gradient(135deg, #8ad0ff 0%, #3aa0ff 100%); }
-html.type-eau h1, html.type-eau #informations { color: #004a8f; }
-html.type-eau #image { background: rgba(58, 160, 255, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE PLANTE */
-html.type-plante { --primary-color: #5fc271; }
-html.type-plante body { background: linear-gradient(135deg, #c7f59a 0%, #5fc271 100%); }
-html.type-plante h1, html.type-plante #informations { color: #1a4d2e; }
-html.type-plante #image { background: rgba(95, 194, 113, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE ELECTRIK */
-html.type-electrik { --primary-color: #ffd034; }
-html.type-electrik body { background: linear-gradient(135deg, #fff58a 0%, #ffd034 100%); }
-html.type-electrik h1, html.type-electrik #informations { color: #8b6914; }
-html.type-electrik #image { background: rgba(255, 208, 52, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE NORMAL */
-html.type-normal { --primary-color: #9d9d9d; }
-html.type-normal body { background: linear-gradient(135deg, #e8e8e8 0%, #9c9c9c 100%); }
-html.type-normal h1, html.type-normal #informations { color: #333; }
-html.type-normal #image { background: rgba(201, 201, 201, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE POISON */
-html.type-poison { --primary-color: #b950d7; }
-html.type-poison body { background: linear-gradient(135deg, #e6c2ff 0%, #b950d7 100%); }
-html.type-poison h1, html.type-poison #informations { color: #5a0080; }
-html.type-poison #image { background: rgba(185, 80, 215, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE ROCHE */
-html.type-roche { --primary-color: #9e8f64; }
-html.type-roche body { background: linear-gradient(135deg, #d6c6a6 0%, #9e8f64 100%); }
-html.type-roche h1, html.type-roche #informations { color: #3a2f1a; }
-html.type-roche #image { background: rgba(158, 143, 100, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE SOL */
-html.type-sol { --primary-color: #c89a5b; }
-html.type-sol body { background: linear-gradient(135deg, #e8d6b0 0%, #c89a5b 100%); }
-html.type-sol h1, html.type-sol #informations { color: #4a3a1a; }
-html.type-sol #image { background: rgba(200, 154, 91, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE GLACE */
-html.type-glace { --primary-color: #7dd3d3; }
-html.type-glace body { background: linear-gradient(135deg, #d4f1f4 0%, #7dd3d3 100%); }
-html.type-glace h1, html.type-glace #informations { color: #0a4a4a; }
-html.type-glace #image { background: rgba(125, 211, 211, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE PSY */
-html.type-psy { --primary-color: #d88cff; }
-html.type-psy body { background: linear-gradient(135deg, #f5d7ff 0%, #d88cff 100%); }
-html.type-psy h1, html.type-psy #informations { color: #5a0080; }
-html.type-psy #image { background: rgba(216, 140, 255, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE DRAGON */
-html.type-dragon { --primary-color: #7b9bff; }
-html.type-dragon body { background: linear-gradient(135deg, #cbd8ff 0%, #7b9bff 100%); }
-html.type-dragon h1, html.type-dragon #informations { color: #1a2a66; }
-html.type-dragon #image { background: rgba(123, 155, 255, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE FEE */
-html.type-fee { --primary-color: #ffb3e6; }
-html.type-fee body { background: linear-gradient(135deg, #ffd6f0 0%, #ffb3e6 100%); }
-html.type-fee h1, html.type-fee #informations { color: #8a004d; }
-html.type-fee #image { background: rgba(255, 179, 230, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE INSECTE */
-html.type-insecte { --primary-color: #b7d34a; }
-html.type-insecte body { background: linear-gradient(135deg, #f0f7c2 0%, #b7d34a 100%); }
-html.type-insecte h1, html.type-insecte #informations { color: #3d5a0f; }
-html.type-insecte #image { background: rgba(183, 211, 74, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE SPECTRE */
-html.type-spectre { --primary-color: #a99bff; }
-html.type-spectre body { background: linear-gradient(135deg, #d9d3ff 0%, #a99bff 100%); }
-html.type-spectre h1, html.type-spectre #informations { color: #2a1a66; }
-html.type-spectre #image { background: rgba(169, 155, 255, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE VOL */
-html.type-vol { --primary-color: #b7e0fe; }
-html.type-vol body { background: linear-gradient(135deg, #cae5ff 0%, #bfe4ff 100%); }
-html.type-vol h1, html.type-vol #informations { color: #0a3d66; }
-html.type-vol #image { background: rgba(191, 228, 255, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE COMBAT */
-html.type-combat { --primary-color: #ffb39a; }
-html.type-combat body { background: linear-gradient(135deg, #ffd9c2 0%, #ffb39a 100%); }
-html.type-combat h1, html.type-combat #informations { color: #8b3a1a; }
-html.type-combat #image { background: rgba(255, 179, 154, 0.1); padding: 15px; border-radius: 10px; }
-
-/* TYPE ACIER */
-html.type-acier { --primary-color: #bfc7d1; }
-html.type-acier body { background: linear-gradient(135deg, #e6e9ee 0%, #bfc7d1 100%); }
-html.type-acier h1, html.type-acier #informations { color: #2a3a4a; }
-html.type-acier #image { background: rgba(191, 199, 209, 0.1); padding: 15px; border-radius: 10px; }
+html.pokemon-page .pokemon-name,
+html.pokemon-page .desc-section h3,
+html.pokemon-page .tab.active {color: var(--primary-text-color);}

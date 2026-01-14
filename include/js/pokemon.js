@@ -93,4 +93,36 @@ if (pokemon) {
   pokemon.type.forEach(type => {
     document.documentElement.classList.add('type-' + normalize(type));
   });
+
+    // Appliquer une couleur/gradient de fond selon les types du pokémon
+    const typeColors = {
+        'feu': '#ff6b35',
+        'eau': '#3aa0ff',
+        'plante': '#5fc271',
+        'electrik': '#ffd034',
+        'normal': '#9d9d9d',
+        'poison': '#b950d7',
+        'roche': '#9e8f64',
+        'sol': '#c89a5b',
+        'glace': '#7dd3d3',
+        'psy': '#d88cff',
+        'dragon': '#7b9bff',
+        'fee': '#ffb3e6',
+        'insecte': '#b7d34a',
+        'spectre': '#a99bff',
+        'vol': '#b7e0fe',
+        'combat': '#ffb39a',
+        'acier': '#bfc7d1'
+    };
+
+    const colors = pokemon.type.map(t => typeColors[normalize(t)]).filter(Boolean);
+    if (colors.length === 1) {
+        document.documentElement.style.setProperty('--primary-color', colors[0]);
+        document.body.style.background = `linear-gradient(135deg, ${colors[0]} 0%, ${colors[0]} 100%)`;
+    } else if (colors.length >= 2) {
+        // Use first two types to build a gradient
+        document.documentElement.style.setProperty('--primary-color', colors[0]);
+        document.documentElement.style.setProperty('--secondary-color', colors[1]);
+        document.body.style.background = `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1]} 100%)`;
+    }
 }
