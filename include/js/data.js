@@ -16,7 +16,8 @@ let desc_types = ["Ne sous-estimez pas les Pokémon de type Normal. Ils sont sou
 	"Mystérieux et imprévisibles, les Pokémon Spectre sont des créatures inquiétantes jouant avec les peurs de leurs adversaires.",
 	"Les Pokémon de type Dragon sont des créatures rares et puissantes qui dominent les combats, sauf face aux fées.",
 	"Champions de la résistance, les Pokémon Acier encaissent presque tout, mais détestent la chaleur.",
-	"Mignons mais mortels, les Pokémon Fée sont la preuve que l’apparence peut être très trompeuse.",]
+	"Mignons mais mortels, les Pokémon Fée sont la preuve que l’apparence peut être très trompeuse.",
+]
 
 // Tous les pokémon avec leurs caractéristiques
 let data = [
