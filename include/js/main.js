@@ -63,7 +63,7 @@ function createSortMenu() {
     // Ajout des écouteurs d'événements sur les options de tri
     const sortItems = li.querySelectorAll('li[data-sort]');
     sortItems.forEach(item => {
-        // Petit style curseur main pour indiquer que c'est cliquable
+        // style du  curseur pour indiquer que c'est cliquable
         item.style.cursor = 'pointer'; 
         
         item.addEventListener('click', (e) => {
@@ -73,7 +73,7 @@ function createSortMenu() {
         });
     });
 }
-
+// Trieur avec un switch (truc que j'ai trouvé sur la documentation javascript mozilla https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/switch)
 function applySort(sortType) {
     switch (sortType) {
         case 'id-asc':
@@ -103,10 +103,9 @@ function applySort(sortType) {
     }
 
     // Réinitialisation de l'affichage
-    // On remet le compteur à 20 pour ne pas surcharger le DOM si on était loin dans la liste
     currentCount = itemsPerPage; 
     
-    // Rebuild list items to follow the new sorted order, then render
+    // refais la liste en suivant l'ordre du tri selon le type tri selectionné et selon la longueur d'affichage souhaitée
     createListItems();
     renderPokemonList(currentCount);
     
@@ -132,7 +131,7 @@ let listePokemonUl = document.querySelector('#liste-pokemon')
 const itemsPerPage = 20
 let currentCount = Math.min(itemsPerPage, data.length) // Commence à 20 ou moins
 
-// Indicateur simple : "X/Y Pokémon affichés"
+// Indicateur : "x/152 Pokémon affichés"
 let statusDiv = document.createElement('span')
 statusDiv.id = 'status'
 statusDiv.style.marginLeft = '10px'
