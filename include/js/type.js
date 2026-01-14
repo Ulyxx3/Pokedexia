@@ -48,7 +48,7 @@ let listePokemonUl = document.querySelector('#liste-pokemon')
 const itemsPerPage = 20
 let currentCount = Math.min(itemsPerPage, pokemons.length) // Commence à 20 ou moins
 
-// Indicateur simple : "X/Y Pokémon affichés" (ajouté seulement si #boutons existe)
+// Indicateur simple : "X/(nb de pokémon du type concerné) Pokémon affichés" (ajouté seulement si #boutons existe)
 let statusDiv = document.createElement('span')
 statusDiv.id = 'status'
 statusDiv.style.marginLeft = '10px'
