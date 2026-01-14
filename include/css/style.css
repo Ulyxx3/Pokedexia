@@ -272,7 +272,20 @@ html.pokemon-page .pokemon-name {
 html.pokemon-page .types {
     display: flex;
     gap: 15px;
+    margin-top: 8px;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 50px;
+    width: auto;
+    scale: 0.5;
+}
 
+/* Forcer l'affichage horizontal des types et des évolutions */
+html.pokemon-page #types,
+html.pokemon-page #evolutions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 html.pokemon-page .type-badge {
@@ -388,11 +401,6 @@ html.pokemon-page .description {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-
-
-
-
 
 
 /*Pour rendre les élements de la liste invisibles tant que bouton non pressé*/
