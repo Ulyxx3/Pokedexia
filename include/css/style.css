@@ -112,14 +112,14 @@ ul#line {
 
 
 
-h1 { /* mess de bienvenu */
+h1 { /* mess de bienvenue */
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	color: #000000;
 }
 
-h2 { /* mess de bienvenu */
+h2 { /* description */
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -420,8 +420,6 @@ html.pokemon-page .description {
 .invisible {
     display: none;
 }
-
-/* faire bouger le gif que lors du survol */
 
 /* ===== STYLES PAR TYPE DE POKÉMON ===== */
 /* Ces classes (type-feu, type-eau, etc.) sont ajoutées par pokemon.js sur <html> */
