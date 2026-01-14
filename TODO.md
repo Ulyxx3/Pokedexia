@@ -1,5 +1,12 @@
 ### Voici la liste de chose à faire dans la version actuelle du site.
 
+
+
+- TAFFER L'ORAL ET LA VISIBILITE DU CODE 
+
+
+
+
 - Créer un Footer
 - Créer des icones de boutons custom
 - Modifier le placement des outils en tête de page
