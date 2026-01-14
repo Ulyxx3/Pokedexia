@@ -10,8 +10,7 @@
         }
 body {
             font-family: 'Pokemon Classic';
-            background: #cae1f0;
-            color: #000000;
+            background: linear-gradient(135deg, #e4f7ff 0%, #bdf9ff 100%);
             line-height: 1.6;
             min-height: 100vh;
 			font-size: 12px;
@@ -63,8 +62,7 @@ ul#line {
     display: none; /* CORRECTION 1 : On cache la liste par défaut */
     position: absolute;
     top: 100%; /* S'affiche juste en dessous du titre */
-    left: 0;
-    background-color: white; /* Fond blanc comme sur ton image */
+    background-color: white;
     min-width: 200px; /* On élargit la boîte */
     box-shadow: 0px 8px 16px rgba(0,0,0,0.3); /* Jolie ombre */
     z-index: 1000; /* S'assure que ça passe DEVANT les autres éléments */
@@ -90,7 +88,16 @@ ul#line {
 }
 
 .dropdown-content li:hover {
-    background-color: #8accd2; /* Petit effet gris au survol d'un type */
+    background-color: #c3e5fb; /* Effet au survol */
+    background-clip: padding-box;
+}
+
+/* Déplacer uniquement l'icône au survol, pas le bloc li */
+.dropdown-content li img {
+    transition: transform 0.2s;
+}
+.dropdown-content li:hover img {
+    transform: translateX(8px);
 }
 
 /* --- CORRECTION 3 : TAILLE DES IMAGES --- */
@@ -134,8 +141,8 @@ h2 { /* mess de bienvenu */
 }
 
 #liste-pokemon li { /* Box pour chaque Pokémon */
-	background-color: #f2f2f2;
-	border: 1px solid #ccc;
+	background-color: #ffffff;
+	border: 1px solid #91d3fc;
 	border-radius: 8px;
 	width: 150px;
 	text-align: center;
@@ -185,7 +192,7 @@ h2 { /* mess de bienvenu */
     width: 70%;
     max-width: 600px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #91d3fc;
     border-radius: 5px;
     padding: 8px 10px;
     background: #fff;
