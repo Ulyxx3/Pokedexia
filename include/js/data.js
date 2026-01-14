@@ -1,5 +1,6 @@
 // Types des pokémon
-let types = ['Normal', 'Feu', 'Eau', 'Électrik', 'Plante', 'Glace', 'Combat', 'Poison',  'Sol', 'Vol', 'Psy', 'Insecte', 'Roche', 'Spectre', 'Dragon', 'Acier', 'Fée']
+let types= ['Normal', 'Feu', 'Eau', 'Électrik', 'Plante', 'Glace', 'Combat', 'Poison', 'Sol', 'Vol', 'Psy', 'Insecte', 'Roche', 'Spectre', 'Dragon', 'Acier', 'Fée']
+let desc_types = ["","Spectaculaires et explosifs, les Pokémon Feu brillent souvent par leur attaque. Attention toutefois à l'eau, il ne faudrait pas éteindre leur flamme.","","","","","","","","","","","","","","",""]
 
 // Tous les pokémon avec leurs caractéristiques
 let data = [
