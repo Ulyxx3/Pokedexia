@@ -109,6 +109,16 @@ h1 { /* mess de bienvenu */
 	color: #000000;
 }
 
+h2 { /* mess de bienvenu */
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #000000;
+    font-size: small;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 #liste-pokemon { /* changer en div peut-être */
 	display: flex;
 	flex-wrap: wrap;

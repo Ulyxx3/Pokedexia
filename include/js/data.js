@@ -1,6 +1,23 @@
 // Types des pokémon
 let types= ['Normal', 'Feu', 'Eau', 'Électrik', 'Plante', 'Glace', 'Combat', 'Poison', 'Sol', 'Vol', 'Psy', 'Insecte', 'Roche', 'Spectre', 'Dragon', 'Acier', 'Fée']
-let desc_types = ["","Spectaculaires et explosifs, les Pokémon Feu brillent souvent par leur attaque. Attention toutefois à l'eau, il ne faudrait pas éteindre leur flamme.","","","","","","","","","","","","","","",""]
+let desc_types = ["Ne sous-estimez pas les Pokémon de type Normal. Ils sont souvent plus puissants que ce qu'ils semblent.",
+	"Spectaculaires et explosifs, les Pokémon Feu sont les favoris du grand public. Attention tout de même à l'eau...",
+	"Type de Pokémon le plus représenté en première génération, Le type Eau est sans doute le plus polyvalent de tous.",
+	"Rapides comme l'éclair, ces Pokémon adorent utiliser des attaques pour paralyser leurs adversaires.",
+	"Les Pokémon Plante gagnent souvent leurs combats à petit feu, en se soignant, en empoisonant ou bien en endormant leurs rivaux.",
+	"Avec une apparence froide et scintillante, les Pokémon Glace possèdent une grande capacité offensive mais sont fragiles en défense.",
+	"Experts du combat rapproché, les Pokémon de type Combat sont redoutables au corps à corps.",
+	"Restez loin des Pokémon Poison si vous ne voulez pas finir empoisonné, endormis ou confus !",
+	"Solides et destructeurs, les Pokémon de type Sol sont redoutables contre beaucoup d'autres Pokémon... Sauf ceux qui volent !",
+	"Agiles et insaisissables, les Pokémon Vol sont souvent difficiles à toucher, au prix d'une défense un peu faible.",
+	"Basés sur l'intelligence et le contrôle mental, les Pokémon Psy sont très puissants mais fragiles face aux attaques physiques.",
+	"Sous-estimés mais redoutables, les Pokémon Insecte évoluent vite et surprennent souvent les dresseurs trop confiants.",
+	"Les Pokémon de type Roche possèdent une défense solide comme un mur, mais attention aux Pokémon Eau : même les rochers finissent par s'éroder.",
+	"Mystérieux et imprévisibles, les Pokémon Spectre sont des créatures inquiétantes jouant avec les peurs de leurs adversaires.",
+	"Les Pokémon de type Dragon sont des créatures rares et puissantes qui dominent les combats, sauf face aux fées.",
+	"Champions de la résistance, les Pokémon Acier encaissent presque tout, mais détestent la chaleur.",
+	"Mignons mais mortels, les Pokémon Fée sont la preuve que l'apparence peut être très trompeuse.",
+]
 
 // Tous les pokémon avec leurs caractéristiques
 let data = [
