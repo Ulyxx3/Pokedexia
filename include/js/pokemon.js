@@ -75,7 +75,7 @@ document.querySelector("#poids").textContent = "Poids : " + pokemon["poids"]
 document.querySelector("#noms").textContent = `Anglais : ${pokemon['nom_en']} ; Japonais : ${pokemon['nom_ja'][1]} (${pokemon['nom_ja'][0]})`
 document.querySelector("#types").innerHTML = format_types(pokemon["type"])
 document.querySelector("#evolutions").innerHTML = format_evolutions(pokemon["evolutions"])
-document.querySelector(".pokemon-number").textContent = `n°${pokemon['id']}`
+document.querySelector(".pokemon-number").textContent = `n°${data.indexOf(pokemon) + 1}` // Affiche le numéro du pokémon dans le titre
 
 // Système de CSS pour chaque page de pokémon
 // Ajoute des classes au <html> pour que le CSS puisse cibler cette page Pokémon
