@@ -66,24 +66,24 @@ L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un
 
 ## Technologies utilisées
 
-* **HTML5** : Structure sémantique.
-* **CSS3** : Flexbox pour la mise en page, CSS Variables pour le theming dynamique, `@font-face`.
-* **JavaScript (ES6+)** :
-* Manipulation du DOM.
+* **HTML** : Structure sémantique.
+* **CSS** : Flexbox pour la mise en page, CSS Variables pour le theming dynamique, `@font-face`.
+* **JavaScript** :
 * Gestion des paramètres d'URL (`URLSearchParams`).
 * Boucles et conditions pour le tri de données.
+* **GitHub** : Mise en commun du travail
 
 
 
 ## Bibliographie
 
-- Documentation HTML CSS JS de Mozilla : https://developer.mozilla.org/fr/docs/Web
+- Documentation HTML CSS JS de Mozilla (notament pour le switch pour le tri de la page d'accueil): https://developer.mozilla.org/fr/docs/Web
+- Poképédia et connaissances personnelles de la série Pokémon (notament pour l'ajout de MissingNo.) : https://www.pokepedia.fr/MissingNo.
+- Figma pour la conception css des différentes pages : https://www.figma.com/
 - 
 - 
 - 
-- 
-- 
-- 
+- (Ulysse) connaissances en C++ de la spécialité SI (au lycée) - pour le switch
 
 
 ## Auteurs
