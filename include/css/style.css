@@ -10,7 +10,7 @@
         }
 body {
             font-family: 'Pokemon Classic';
-            background: #d1e3ef;
+            background: #cae1f0;
             color: #000000;
             line-height: 1.6;
             min-height: 100vh;
@@ -18,7 +18,7 @@ body {
         }
 
 nav {
-    background-color: #b2d1ec;
+    background-color: #a9d7ff5d;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -36,6 +36,7 @@ ul#line {
 }
 /*Changer la barre de nav, faire des images/logo cliquables et séparer les types par princiapl & secondaire*/
 /* Style du conteneur du menu */
+
 /* --- LE CONTENEUR PRINCIPAL --- */
 .dropdown-container {
     position: relative; /* Indispensable pour positionner la liste en dessous */
@@ -49,7 +50,7 @@ ul#line {
 /* Style du lien "Types de Pokémon" */
 .menu-title {
     text-decoration: none;
-    color: white; /* Adapte selon ton thème */
+    color: rgb(0, 0, 0); /* Adapte selon ton thème */
     padding: 10px;
     font-size: 1.2rem;
 }
@@ -80,7 +81,7 @@ ul#line {
 
 /* --- LES ÉLÉMENTS DE LA LISTE --- */
 .dropdown-content li {
-    padding: 5px 10px;
+    padding: 2px 10px;
     text-align: center; /* Centre les images */
     transition: background-color 0.2s;
 }
@@ -134,8 +135,9 @@ h1 { /* mess de bienvenu */
 }
 
 .pokemon-hidden {
-    display: none !important;
+    display: none;
 }
+
 #liste-pokemon li:hover { /* effet au survol */
 	transform: scale(1.05);
 	transform: translateY(-5px);
@@ -143,20 +145,18 @@ h1 { /* mess de bienvenu */
     border-color: rgba(100, 181, 246, 0.5);
 }
 
-#liste-pokemon li img { /* image des pokémons BUG ICI*/
+#liste-pokemon li img { /* image des pokémons */
 	width: 100px;
 	height: 100px;
 	object-fit: contain;
 	margin-bottom: 10px;
     object-position: center;
-
 }
 
 
 #liste-pokemon li a { /* Bloc clickable */
     display: block;
     width: 100%;
-
     color: inherit;
     text-decoration: none;
 }
@@ -190,35 +190,18 @@ div#boutons {
 	list-style: none;
 }
 
-div#boutons button { /* Base récupérée sur un site internet dédié puis modifiée */
-  align-items: center;
-  appearance: none;
-  background-color: #FCFCFD;
-  border-radius: 4px;
-  border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #36395A;
-  cursor: pointer;
-  display: flex;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
-  font-size: 14px;
-  font-family: "Pokemon Classic";
+div#boutons button {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 
@@ -499,8 +482,8 @@ html.type-spectre h1, html.type-spectre #informations { color: #2a1a66; }
 html.type-spectre #image { background: rgba(169, 155, 255, 0.1); padding: 15px; border-radius: 10px; }
 
 /* TYPE VOL */
-html.type-vol { --primary-color: #bfe4ff; }
-html.type-vol body { background: linear-gradient(135deg, #e6f3ff 0%, #bfe4ff 100%); }
+html.type-vol { --primary-color: #b7e0fe; }
+html.type-vol body { background: linear-gradient(135deg, #cae5ff 0%, #bfe4ff 100%); }
 html.type-vol h1, html.type-vol #informations { color: #0a3d66; }
 html.type-vol #image { background: rgba(191, 228, 255, 0.1); padding: 15px; border-radius: 10px; }
 
@@ -515,15 +498,3 @@ html.type-acier { --primary-color: #bfc7d1; }
 html.type-acier body { background: linear-gradient(135deg, #e6e9ee 0%, #bfc7d1 100%); }
 html.type-acier h1, html.type-acier #informations { color: #2a3a4a; }
 html.type-acier #image { background: rgba(191, 199, 209, 0.1); padding: 15px; border-radius: 10px; }
-
-
-/* Per-type classes (names normalized by JS) */
-
-/*html.pokemon-page body, html.pokemon-page .page, html.type-feu, .pokemon-card { background: linear-gradient(135deg,#ffb057,#ff5a36); color:#fff }
-html.type-eau .pokemon-card { background: linear-gradient(135deg,#8ad0ff,#3aa0ff); color:#04283b }*/
-
-/*html.pokemon-page body, html.pokemon-page .page,html.type-plante, .pokemon-card { background: linear-gradient(135deg,#c7f59a,#5fc271); color:#042a0b } */
-
-
-/*  html.pokemon-page body, html.pokemon-page .page, .pokemon-page {}  Les sélécteurs pour la page (important) */
-
