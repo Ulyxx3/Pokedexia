@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is that Pokémon?</title>
+    <link rel="stylesheet" href="include/css/style.css">
+    <style>
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+/* Zone de l'image */
+.image-wrapper {
+    position: relative;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px 0;
+}
+
+#pokemon-image {
+    max-height: 250px;
+    width: auto;
+    transition: filter 0.02s ease-in-out, transform 0.02s;
+}
+
+/* LA MAGIE EST ICI : Rend l'image noire */
+.silhouette {
+    filter: brightness(0) contrast(0);
+    pointer-events: none; /* Empêche le clic droit triche */
+}
+
+/* Quand le pokémon est trouvé */
+.revealed {
+    filter: brightness(1) contrast(1);
+    transform: scale(1.1);
+}
+
+/* Inputs et Boutons */
+.input-area {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 60%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ffcb05; /* Jaune Pokémon */
+    border: 2px solid #3c5aa6; /* Bleu Pokémon */
+    color: #3c5aa6;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #ffdb4d;
+}
+
+#next-btn {
+    background-color: #3c5aa6;
+    color: white;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Messages de succès/erreur */
+.success {
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <header>
+            <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" alt="Pokémon Logo" class="logo"></a>
+            <h1>Qui est ce Pokémon ?</h1>
+        </header>
+
+        <div class="display-area">
+            <div class="image-wrapper">
+                <img id="pokemon-image" src="" alt="Pokémon mystère" class="silhouette">
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="guess-input" list="pokemon-list" placeholder="Nom du Pokémon..." autocomplete="off">
+            <datalist id="pokemon-list"></datalist>
+            
+            <button id="submit-btn">Valider</button>
+        </div>
+
+        <div id="result-message" class="hidden"></div>
+
+        <button id="next-btn" class="hidden">Pokémon Suivant ➝</button>
+    </div>
+
+    <script src="include/js/data.js"></script>
+    <script src="include/js/who.js"></script>
+</body>
+</html>
