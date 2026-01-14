@@ -37,7 +37,7 @@ let id = urlParams.get('id')
 
 // Remplir la page
 document.querySelector("title").textContent += id
-document.querySelector("h1").textContent = id
+document.querySelector("h1").textContent = "Type " + id
 document.querySelector("h2").textContent = desc_types[types.indexOf(id)]
 
 let pokemons = get_pokemons(data, id)
