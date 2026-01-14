@@ -12,11 +12,11 @@ let desc_types = ["Ne sous-estimez pas les Pokémon de type Normal. Ils sont sou
 	"Agiles et insaisissables, les Pokémon Vol sont souvent difficiles à toucher, au prix d'une défense un peu faible.",
 	"Basés sur l'intelligence et le contrôle mental, les Pokémon Psy sont très puissants mais fragiles face aux attaques physiques.",
 	"Sous-estimés mais redoutables, les Pokémon Insecte évoluent vite et surprennent souvent les dresseurs trop confiants.",
-	"Les Pokémon de type Roche possèdent une défense solide comme un mur, mais attention aux Pokémon Eau : même les rochers finissent par s’éroder.",
+	"Les Pokémon de type Roche possèdent une défense solide comme un mur, mais attention aux Pokémon Eau : même les rochers finissent par s'éroder.",
 	"Mystérieux et imprévisibles, les Pokémon Spectre sont des créatures inquiétantes jouant avec les peurs de leurs adversaires.",
 	"Les Pokémon de type Dragon sont des créatures rares et puissantes qui dominent les combats, sauf face aux fées.",
 	"Champions de la résistance, les Pokémon Acier encaissent presque tout, mais détestent la chaleur.",
-	"Mignons mais mortels, les Pokémon Fée sont la preuve que l’apparence peut être très trompeuse.",
+	"Mignons mais mortels, les Pokémon Fée sont la preuve que l'apparence peut être très trompeuse.",
 ]
 
 // Tous les pokémon avec leurs caractéristiques

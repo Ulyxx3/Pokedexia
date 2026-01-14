@@ -114,6 +114,9 @@ h2 { /* mess de bienvenu */
 	margin-top: 20px;
 	margin-bottom: 20px;
 	color: #000000;
+    font-size: small;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 #liste-pokemon { /* changer en div peut-être */
