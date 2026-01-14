@@ -6,7 +6,7 @@
 - Coder le CSS des pages Pokémons
 - Annexer la totalité du code et le sourcé/le rebuild si incompris
 - Ajouter les tag sous chaque icone de pokemon
-- Ajouter des gradients custom pour les pokemon à double type & solo type (gradiant de la même couleur)
+- Ajouter des gradients custom pour les pokemon à double type & solo type(gradiant de la même couleur)
 - Ajouter de l'interractivité au header
 - Ajouter un effet de texte sur le Welcome Message
 - Faire un logo pour pokedexia

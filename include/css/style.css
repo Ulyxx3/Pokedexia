@@ -241,12 +241,10 @@ div#boutons button.plus:hover {
 
 html.pokemon-page body {
             font-family: 'Pokemon Classic';
-            background: #d1e3ef;
             line-height: 1.6;
             padding: 20px;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
 }
 
@@ -255,14 +253,15 @@ html.pokemon-page .container {
             border-radius: 30px;
             padding: 40px;
             max-width: 1200px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin: auto;
+            box-shadow: 0 8px 30px rgba(100, 181, 246, 0.3);
 }
 
 html.pokemon-page .header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 html.pokemon-page .pokemon-number {
@@ -278,18 +277,18 @@ html.pokemon-page .pokemon-name {
 }
 
 html.pokemon-page .types {
-    display: inline-block;
-    gap: 10px;
-    
-    margin-left: auto;
-    size-adjust: auto;
+    display: flex;
+    gap: 15px;
+
 }
 
 html.pokemon-page .type-badge {
-    padding: 8px 30px;
-    border-radius: 8px;
-    color: white;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 html.pokemon-page .type-fire {
@@ -306,18 +305,9 @@ html.pokemon-page .main-content {
     gap: 40px;
 }
 
-html.pokemon-page .image-section {
-    background: linear-gradient(135deg, #a8d8ff 0%, #d4ebff 100%);
-    border-radius: 20px;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 html.pokemon-page .pokemon-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
 }
 
