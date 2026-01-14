@@ -41,7 +41,7 @@ function get_pokemonEvo(name, all_data) {
 // Renvoie une chaîne de caractères avec chaque type de pokémon
 // et un lien vers sa page
 function format_types(types) {
-	let str = "Types : "
+    let str = ""
 	for (let type of types) {
 		str += ` <a href="type.html?id=${type}"><img src="img/types/${type}.png" alt="${type}"></img></a> `
 	}

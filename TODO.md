@@ -13,3 +13,5 @@
 - Changer l'ordre des Type dans la liste déroulante (faire par qui bat qui)
 - mettre un écart entre les gifs et les types/nom sur l'index
 - ajouter une réponse au fléche G/D pour changer d'évolution
+
+- Who's that pokemon?

@@ -21,20 +21,62 @@
     </ul>
 </nav>
 
-	<h1></h1>
-	<div id="image">
-		<img height="100px">
-	</div>
-	<div id="informations">
-		<p id="description"></p>
-		<ul>
-			<li id="noms"></li>
-			<li id="taille"></li>
-			<li id="poids"></li>
-			<li id="types"></li>
-			<li id="evolutions"></li>
-		</ul>
-	</div>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <div class="pokemon-number">n°à changer</div>
+                <h1 class="pokemon-name"></h1>
+            </div>
+            <div class="types">
+                <span id="types" class="type-badge"></span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="image-section">
+                <div style="text-align: center; color: #2d3561;">
+                    <div id="image">
+						<img height="300px">
+					</div>
+                    <p style="margin-top: 20px; font-style: italic;">Mega Charizard X</p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="tabs">
+                    <div class="tab active">Forms</div>
+                    <div id="noms">Noms</div>
+                    <div id="taille">Taille</div>
+                    <div id="poids">Poids</div>
+                    <div id="evolutions">Evolutions/div>
+                </div>
+
+                <div class="forms-grid">
+                    <div class="form-card form-1">
+                        <div class="form-icon">🦎</div>
+                    </div>
+                    <div class="form-card form-2">
+                        <div class="form-icon">🐲</div>
+                    </div>
+                    <div class="form-card form-3">
+                        <div class="form-icon">🔥</div>
+                    </div>
+                    <div class="form-card form-4">
+                        <div class="form-icon">☀️</div>
+                    </div>
+                </div>
+
+                <div class="desc-section">
+					<h2>Description :</h2>
+                    <p id="description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+	
 	
 	<script src="include/js/data.js" defer></script>
 	<script src="include/js/pokemon.js" defer></script>
