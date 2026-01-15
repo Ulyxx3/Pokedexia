@@ -134,6 +134,34 @@ h2 {
     padding: 10px;
 }
 
+/* STYLES DU FOOTER DE L'INDEX */
+footer{
+        flex-shrink:0;
+        position: relative;
+        width: 100%;
+        background: rgb(208, 242, 254);
+        box-shadow: #a4d6ed 0px -4px 6px -1px;
+}
+.contenu-footer{
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        font-size:18px;
+        padding: 30px 0 30px;
+}
+footer .bloc {
+        width: 50%;
+        margin:0 10% 0 10%;
+}
+
+footer img {
+        width: 70%;
+        height: auto;
+        margin-bottom: 10px;
+}
+
+
+/* Styles de la liste des pokémons */
 #liste-pokemon { /* changer en div peut-être */
 	display: flex;
 	flex-wrap: wrap;
@@ -546,35 +574,4 @@ html.witp .success {
 html.witp .error {
     color: #e74c3c;
     font-weight: bold;
-}
-
-/* STYLES DU FOOTER COMMUN À TOUTES LES PAGES */
-footer{
-        flex-shrink:0;
-        border-top: 1px solid #28333f;
-        width: 100%;
-        background: rgb(156, 188, 204);
-        box-shadow: #485b64 0px -4px 6px -1px;
-}
-.contenu-footer{
-        width: 1200px;
-        margin:0 auto;
-        display: flex;
-        
-        font-size:20px;
-        padding: 70px 0 50px;
-}
-footer .bloc {
-        width: 50%;
-        margin:0 30px;
-
-}
-.footer-logo{
-        font-size: 25px;
-        padding :2px;
-}
-
-footer .img{
-        justify-content: right;  
-        scale: 75%;
 }
