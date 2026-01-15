@@ -361,3 +361,187 @@ html.pokemon-page {--primary-text-color: var(--primary-color, #2d3561);}
 html.pokemon-page .pokemon-name,
 html.pokemon-page .desc-section h3,
 html.pokemon-page .tab.active {color: var(--primary-text-color);}
+
+
+/* PARTIE WITP */
+html.witp body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden; /* IMPORTANT : Empêche le scroll causé par la rotation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Nécessaire pour placer le fond par rapport au body */
+}
+
+/* 2. Le style du grand fond animé */
+html.witp .page-background {
+    position: fixed; /* Reste fixe même si on scrolle (si jamais) */
+    top: -100%;       /* On le décale pour bien le centrer */
+    left: -100%;
+    width: 300%;     /* Il doit être immensément grand pour couvrir les coins */
+    height: 300%;
+    z-index: -1;     /* On le met tout au fond, derrière tout le reste */
+    
+    /* Le dégradé "Soleil Levant" */
+    background: repeating-conic-gradient(
+        from 0deg,
+        #f5f7fa 0deg 10deg,   /* Couleur claire (blanc/gris) */
+        #ddefff 10deg 20deg   /* Couleur un peu plus foncée (bleu gris) */
+    );
+    
+    /* Animation TRES lente (60s) */
+    animation: spin-bg 60s linear infinite;
+}
+
+/* 3. On garde la game-container bien visible au-dessus */
+html.witp .game-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Ombre un peu plus marquée */
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    z-index: 10; /* S'assure que le jeu est AU-DESSUS du fond */
+}
+
+/* 4. L'animation de rotation */
+@keyframes spin-bg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+html.witp .logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+/* 1. Ajustement du conteneur parent */
+html.witp .image-wrapper {
+    position: relative; /* Nécessaire pour positionner le fond */
+    overflow: hidden;   /* Coupe ce qui dépasse du cadre */
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3c5aa6; /* Une couleur de fond de base (bleu Pokémon) */
+    border-radius: 20px;       /* Optionnel : arrondir les coins */
+    margin-bottom: 20px;
+}
+
+/* 2. Création des bandes qui tournent */
+html.witp .rotating-background {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;  /* Doit être plus grand que le conteneur pour couvrir les coins */
+    height: 200%;
+    z-index: 0;   /* Place le fond DERRIÈRE le Pokémon */
+    
+    /* C'est ici que la magie opère : les bandes */
+    background: repeating-conic-gradient(
+        from 0deg,
+        #3c5aa6 0deg 15deg,  /* Couleur 1 (Bleu foncé) */
+        #5a7bc2 15deg 30deg  /* Couleur 2 (Bleu plus clair) */
+    );
+    
+    /* L'animation de rotation */
+    animation: spin 10s linear infinite;
+}
+
+/* 3. Assurer que le Pokémon est DEVANT le fond */
+html.witp #pokemon-image {
+    position: relative;
+    z-index: 1; /* Place l'image AU-DESSUS du fond */
+    max-height: 200px; /* Ajuste selon tes besoins */
+    width: auto;
+}
+
+/* 4. Définition de l'animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* LA MAGIE EST ICI : Rend l'image noire */
+html.witp .silhouette {
+    filter: brightness(0) contrast(0);
+    pointer-events: none; /* Empêche le clic droit triche */
+}
+
+/* Quand le pokémon est trouvé */
+html.witp .revealed {
+    filter: brightness(1) contrast(1);
+    transform: scale(1.1);
+}
+html.witp .revealed {
+    filter: brightness(1) contrast(1);
+    transform: scale(1.1);
+}
+
+/* Inputs et Boutons */
+html.witp .input-area {
+    
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+html.witp input {
+    font-family: Pokemon Classic;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 60%;
+}
+
+html.witp button {
+    font-family: Pokemon Classic;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Jaune Pokémon */
+    border: 2px solid #3c5aa6; /* Bleu Pokémon */
+    color: #3c5aa6;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+html.witp button:hover {
+    background-color: #ffdb4d;
+}
+
+html.witp #next-btn {
+    background-color: #3c5aa6;
+    color: white;
+    margin-top: 15px;
+    width: 100%;
+}
+
+html.witp .hidden {
+    display: none;
+}
+
+/* Messages de succès/erreur */
+html.witp .success {
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+html.witp .error {
+    color: #e74c3c;
+    font-weight: bold;
+}
