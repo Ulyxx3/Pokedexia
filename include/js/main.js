@@ -146,36 +146,16 @@ function updateStatus() {
 function createListItems() {
     // Supprime les anciens éléments
     while (listePokemonUl.firstChild) listePokemonUl.removeChild(listePokemonUl.firstChild);
-
-    // Crée un <li> par Pokémon
+    // Crée un <li> par Pokémon mais les marque cachés par défaut
     for (let i = 0; i < data.length; i++) {
-        let pokemon = data[i];
-        let li = document.createElement('li');
-        li.classList.add('pokemon-hidden');
-
-        // On parcourt le tableau pokemon.type
-        // On crée une balise img pour chaque type
-        let typesHtml = '';
-        for (let type of pokemon.type) {
-            typesHtml += `<img src="img/types/${type}.png" class="type-mini" alt="${type}">`;
-        }
-
-        // On construit le HTML de la liste
-        // + ajout des <div> pour bien séparer le nom, l'Image du Pokémon et les Types
-        li.innerHTML = `
-            <a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">
-                <div class="poke-name">${pokemon['nom']}</div>
-                <img src="img/${pokemon['gif']}" height="60px" alt="${pokemon['nom']}" class="poke-gif">
-                <div class="types-container">
-                    ${typesHtml}
-                </div>
-            </a>
-        `;
-        
-        listePokemonUl.appendChild(li); 
+        let pokemon = data[i]; 
+        let li = document.createElement('li'); 
+        li.classList.add('pokemon-hidden'); // Caché par défaut
+        // Ajoute le lien avec le nom et l'image
+        li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`;
+        listePokemonUl.appendChild(li);
     }
 }
-
 // Affiche (via classes) les premiers 'count' éléments
 function renderPokemonList(count) { 
     // Si les éléments n'existent pas encore ou ont changé, crée-les
