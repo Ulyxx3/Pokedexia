@@ -2,9 +2,9 @@
 // Remplir le menu avec les types de pokémon
 let ul = document.querySelector('#liste-types');
 
-if (ul && typeof types !== 'undefined') {
-    for (let type of types) {
-        let li = document.createElement("li");
+if (ul && typeof types !== 'undefined') { 
+    for (let type of types) { 
+        let li = document.createElement("li"); 
         
         // On crée le lien et l'image
         // On ne met pas de style ici, le CSS met la taille (.dropdown-content img)
@@ -29,7 +29,7 @@ data.forEach((pokemon, index) => {
     pokemon._id = index + 1;
     
     // Conversion "6,9 kg" -> 6.9 (Float)
-    pokemon._poidsVal = parseFloat(pokemon.poids.replace(',', '.').replace(/[^\d.-]/g, ''));
+    pokemon._poidsVal = parseFloat(pokemon.poids.replace(',', '.').replace(/[^\d.-]/g, '')); // remplace la virgule par un point et retire tout sauf les chiffres, le point et le signe moins
     
     // Conversion "0,7 m" -> 0.7 (Float)
     pokemon._tailleVal = parseFloat(pokemon.taille.replace(',', '.').replace(/[^\d.-]/g, ''));
@@ -57,13 +57,13 @@ function createSortMenu() {
         </ul>
     `;
     
-    // Ajout à la navbar (avant ou après les types, ici on l'ajoute à la fin)
+    // Ajout à la navbar 
     navbarList.appendChild(li);
 
     // Ajout des écouteurs d'événements sur les options de tri
     const sortItems = li.querySelectorAll('li[data-sort]');
     sortItems.forEach(item => {
-        // style du  curseur pour indiquer que c'est cliquable
+        // style du  curseur cliquable
         item.style.cursor = 'pointer'; 
         
         item.addEventListener('click', (e) => {
@@ -76,28 +76,28 @@ function createSortMenu() {
 // Trieur avec un switch (truc que j'ai trouvé sur la documentation javascript mozilla https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/switch)
 function applySort(sortType) {
     switch (sortType) {
-        case 'id-asc':
+        case 'id-asc': // Tri par ID croissant
             data.sort((a, b) => a._id - b._id);
             break;
-        case 'id-desc':
+        case 'id-desc': // Tri par ID décroissant
             data.sort((a, b) => b._id - a._id);
             break;
-        case 'name-asc':
+        case 'name-asc': // Tri par nom A-Z
             data.sort((a, b) => a.nom.localeCompare(b.nom));
             break;
-        case 'name-desc':
+        case 'name-desc': // Tri par nom Z-A
             data.sort((a, b) => b.nom.localeCompare(a.nom));
             break;
-        case 'weight-asc':
+        case 'weight-asc': // Tri par poids croissant
             data.sort((a, b) => a._poidsVal - b._poidsVal);
             break;
-        case 'weight-desc':
+        case 'weight-desc': // Tri par poids décroissant
             data.sort((a, b) => b._poidsVal - a._poidsVal);
             break;
-        case 'height-asc':
+        case 'height-asc': // Tri par taille croissante
             data.sort((a, b) => a._tailleVal - b._tailleVal);
             break;
-        case 'height-desc':
+        case 'height-desc': // Tri par taille décroissante
             data.sort((a, b) => b._tailleVal - a._tailleVal);
             break;
     }
@@ -121,7 +121,7 @@ function applySort(sortType) {
 createSortMenu();
 
 // ==========================================
-// LISTE DE POKÉMON AVEC PAGINATION ET RECHERCHE
+// LISTE DE POKÉMON (RENDU DES POKÉMON) ET RECHERCHE
 // ==========================================
 // Remplir la liste de pokemon avec le nom, le lien vers sa page et une image
 
@@ -143,19 +143,36 @@ function updateStatus() {
 }
 
 // Fonction pour afficher les premiers 'count' Pokémon
-// Crée tous les éléments de la liste (une seule fois ou après tri)
 function createListItems() {
     // Supprime les anciens éléments
     while (listePokemonUl.firstChild) listePokemonUl.removeChild(listePokemonUl.firstChild);
 
-    // Crée un <li> par Pokémon mais les marque cachés par défaut
+    // Crée un <li> par Pokémon
     for (let i = 0; i < data.length; i++) {
         let pokemon = data[i];
         let li = document.createElement('li');
         li.classList.add('pokemon-hidden');
-        // Ajoute le lien avec le nom et l'image
-        li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`;
-        listePokemonUl.appendChild(li);
+
+        // On parcourt le tableau pokemon.type
+        // On crée une balise img pour chaque type
+        let typesHtml = '';
+        for (let type of pokemon.type) {
+            typesHtml += `<img src="img/types/${type}.png" class="type-mini" alt="${type}">`;
+        }
+
+        // On construit le HTML de la liste
+        // + ajout des <div> pour bien séparer le nom, l'Image du Pokémon et les Types
+        li.innerHTML = `
+            <a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">
+                <div class="poke-name">${pokemon['nom']}</div>
+                <img src="img/${pokemon['gif']}" height="60px" alt="${pokemon['nom']}" class="poke-gif">
+                <div class="types-container">
+                    ${typesHtml}
+                </div>
+            </a>
+        `;
+        
+        listePokemonUl.appendChild(li); 
     }
 }
 
@@ -167,8 +184,8 @@ function renderPokemonList(count) {
     }
 // Met à jour la visibilité des éléments
     const items = listePokemonUl.children;
-    for (let i = 0; i < items.length; i++) {
-        if (i < count) {
+    for (let i = 0; i < items.length; i++) { 
+        if (i < count) { 
             items[i].classList.remove('pokemon-hidden');
             items[i].classList.add('pokemon-visible');
         } else {
@@ -213,13 +230,15 @@ if (moinsBtn) {
 renderPokemonList(currentCount)
 
 // Barre de recherche
-let searchInput = document.createElement("input") // Champ de saisie
-searchInput.type = "text"
-searchInput.id = "search-input" 
+let searchInput = document.createElement("input") // Création de l'input
+searchInput.type = "text" // Type texte
+searchInput.id = "search-input" // ID pour le style et la sélection
 searchInput.placeholder = "Rechercher un Pokémon..." // Texte indicatif
+
+// Insérer la barre de recherche avant la liste des pokémons
 let searchWrapper = document.createElement("div") // Conteneur pour la barre de recherche
-searchWrapper.id = "search-wrapper" // Conteneur pour le style
-searchWrapper.appendChild(searchInput) // Ajoute le champ au conteneur
+searchWrapper.id = "search-wrapper" // ID pour le style
+searchWrapper.appendChild(searchInput) // Ajout de l'input au conteneur
 listePokemonUl.parentElement.insertBefore(searchWrapper, listePokemonUl) // Insère avant la liste
 
 // Écouteur pour la recherche
@@ -228,8 +247,9 @@ searchInput.addEventListener("input", function() { // À chaque modification du 
     let pokemonLinks = document.querySelectorAll('.pokemon-link'); // Tous les liens de pokémon
     pokemonLinks.forEach(function(link) { // Pour chaque lien
         let text = link.textContent.toLowerCase(); // Texte du lien en minuscules
-        const li = link.parentElement; // Affiche ou cache selon la correspondance
-        if (text.includes(filter)) { // Si le texte du lien contient le texte recherché
+        const li = link.parentElement; // Le <li> parent du lien
+        // Affiche ou cache selon la correspondance
+        if (text.includes(filter)) {
             li.classList.remove('pokemon-hidden');
             li.classList.add('pokemon-visible');
         } else {
@@ -239,4 +259,9 @@ searchInput.addEventListener("input", function() { // À chaque modification du 
     });
 })
 
-// PS : Le système de hidden/visible est réutilisé dans notre système de déroulement !
+//fix le fait que tous les pokémons soient affichés après une recherche
+
+// a faire en + :
+// Styliser la barre de recherche avec CSS ?
+// Styles de base pour le champ de recherche 
+// mettre la barre de recherche dans la nav bar tout le temps sauf dans pokemon.html 
