@@ -2,9 +2,9 @@
 // Remplir le menu avec les types de pokémon
 let ul = document.querySelector('#liste-types');
 
-if (ul && typeof types !== 'undefined') {
-    for (let type of types) {
-        let li = document.createElement("li");
+if (ul && typeof types !== 'undefined') { 
+    for (let type of types) { 
+        let li = document.createElement("li"); 
         
         // On crée le lien et l'image
         // On ne met pas de style ici, le CSS met la taille (.dropdown-content img)
@@ -29,7 +29,7 @@ data.forEach((pokemon, index) => {
     pokemon._id = index + 1;
     
     // Conversion "6,9 kg" -> 6.9 (Float)
-    pokemon._poidsVal = parseFloat(pokemon.poids.replace(',', '.').replace(/[^\d.-]/g, ''));
+    pokemon._poidsVal = parseFloat(pokemon.poids.replace(',', '.').replace(/[^\d.-]/g, '')); // remplace la virgule par un point et retire tout sauf les chiffres, le point et le signe moins
     
     // Conversion "0,7 m" -> 0.7 (Float)
     pokemon._tailleVal = parseFloat(pokemon.taille.replace(',', '.').replace(/[^\d.-]/g, ''));
@@ -57,13 +57,13 @@ function createSortMenu() {
         </ul>
     `;
     
-    // Ajout à la navbar (avant ou après les types, ici on l'ajoute à la fin)
+    // Ajout à la navbar 
     navbarList.appendChild(li);
 
     // Ajout des écouteurs d'événements sur les options de tri
     const sortItems = li.querySelectorAll('li[data-sort]');
     sortItems.forEach(item => {
-        // style du  curseur pour indiquer que c'est cliquable
+        // style du  curseur cliquable
         item.style.cursor = 'pointer'; 
         
         item.addEventListener('click', (e) => {
@@ -76,28 +76,28 @@ function createSortMenu() {
 // Trieur avec un switch (truc que j'ai trouvé sur la documentation javascript mozilla https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/switch)
 function applySort(sortType) {
     switch (sortType) {
-        case 'id-asc':
+        case 'id-asc': // Tri par ID croissant
             data.sort((a, b) => a._id - b._id);
             break;
-        case 'id-desc':
+        case 'id-desc': // Tri par ID décroissant
             data.sort((a, b) => b._id - a._id);
             break;
-        case 'name-asc':
+        case 'name-asc': // Tri par nom A-Z
             data.sort((a, b) => a.nom.localeCompare(b.nom));
             break;
-        case 'name-desc':
+        case 'name-desc': // Tri par nom Z-A
             data.sort((a, b) => b.nom.localeCompare(a.nom));
             break;
-        case 'weight-asc':
+        case 'weight-asc': // Tri par poids croissant
             data.sort((a, b) => a._poidsVal - b._poidsVal);
             break;
-        case 'weight-desc':
+        case 'weight-desc': // Tri par poids décroissant
             data.sort((a, b) => b._poidsVal - a._poidsVal);
             break;
-        case 'height-asc':
+        case 'height-asc': // Tri par taille croissante
             data.sort((a, b) => a._tailleVal - b._tailleVal);
             break;
-        case 'height-desc':
+        case 'height-desc': // Tri par taille décroissante
             data.sort((a, b) => b._tailleVal - a._tailleVal);
             break;
     }
@@ -121,7 +121,7 @@ function applySort(sortType) {
 createSortMenu();
 
 // ==========================================
-// LISTE DE POKÉMON AVEC PAGINATION ET RECHERCHE
+// LISTE DE POKÉMON (RENDU DES POKÉMON) ET RECHERCHE
 // ==========================================
 // Remplir la liste de pokemon avec le nom, le lien vers sa page et une image
 
@@ -230,13 +230,15 @@ if (moinsBtn) {
 renderPokemonList(currentCount)
 
 // Barre de recherche
-let searchInput = document.createElement("input")
-searchInput.type = "text"
-searchInput.id = "search-input"
-searchInput.placeholder = "Rechercher un Pokémon..."
-let searchWrapper = document.createElement("div")
-searchWrapper.id = "search-wrapper"
-searchWrapper.appendChild(searchInput)
+let searchInput = document.createElement("input") // Création de l'input
+searchInput.type = "text" // Type texte
+searchInput.id = "search-input" // ID pour le style et la sélection
+searchInput.placeholder = "Rechercher un Pokémon..." // Texte indicatif
+
+// Insérer la barre de recherche avant la liste des pokémons
+let searchWrapper = document.createElement("div") // Conteneur pour la barre de recherche
+searchWrapper.id = "search-wrapper" // ID pour le style
+searchWrapper.appendChild(searchInput) // Ajout de l'input au conteneur
 listePokemonUl.parentElement.insertBefore(searchWrapper, listePokemonUl) // Insère avant la liste
 
 // Écouteur pour la recherche
@@ -245,7 +247,7 @@ searchInput.addEventListener("input", function() {
     let pokemonLinks = document.querySelectorAll('.pokemon-link'); // Tous les liens de pokémon
     pokemonLinks.forEach(function(link) { // Pour chaque lien
         let text = link.textContent.toLowerCase(); // Texte du lien en minuscules
-        const li = link.parentElement; 
+        const li = link.parentElement; // Le <li> parent du lien
         // Affiche ou cache selon la correspondance
         if (text.includes(filter)) {
             li.classList.remove('pokemon-hidden');
@@ -259,8 +261,7 @@ searchInput.addEventListener("input", function() {
 
 //fix le fait que tous les pokémons soient affichés après une recherche
 
-
+// a faire en + :
 // Styliser la barre de recherche avec CSS ?
-
-// Styles de base pour le champ de recherche (dev avec le cul)
-// mettre la barre de recherche dans la nav bar tout le temps sauf dans pokemon.html et mettre les types dans un menu déroulant ?
+// Styles de base pour le champ de recherche 
+// mettre la barre de recherche dans la nav bar tout le temps sauf dans pokemon.html 
