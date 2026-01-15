@@ -119,7 +119,7 @@ h1 { /* mess de bienvenu */
 	color: #000000;
 }
 
-h2 { /* mess de bienvenu */
+h2 { /* description des types lors de recherche filtré */
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -129,7 +129,7 @@ h2 { /* mess de bienvenu */
     margin-right: 30%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     background-color: rgb(255, 255, 255);
-    border: 1px solid #242424;
+    border: 1px solid #b2dcfb;
     border-radius: 30px;
     padding: 10px;
 }
