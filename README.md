@@ -11,6 +11,7 @@ Le site est conçu en **HTML, CSS et JavaScript pur**, et s'appuie sur une base 
 * **Liste complète** : Affichage dynamique de tous les Pokémon de la première génération (de Bulbizarre à MissingNo.) sur la page d'accueil.
 * **Barre de recherche en temps réel** : Un champ de saisie permet de filtrer instantanément les Pokémon par leur nom (sans rechargement de page).
 * **Menu déroulant interactif** : La barre de navigation inclut un menu "Types de Pokémon" généré dynamiquement, affichant les icônes des types pour une navigation rapide.
+* **Menu déroulant pour trier** : par id, poids, taille et alphabétique
 
 ### Fiches Détaillées (Single Page)
 
@@ -21,7 +22,7 @@ Chaque Pokémon possède sa propre page dédiée (`pokemon.html`) générée dyn
 * **Types** : Liste des types du Pokémon avec liens cliquables vers la page de catégorie.
 * **Chaîne d'évolution** : Affichage des différentes évolutions du Pokémon sous forme d'images cliquables (GIFs) pour naviguer facilement dans la famille.
 
-### ⚡ Filtrage par Type
+### Filtrage par Type
 
 * Une page dédiée (`type.html`) permet de lister uniquement les Pokémon appartenant à un type spécifique (ex: Eau, Feu, Spectre).
 
@@ -67,10 +68,8 @@ L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un
 ## Technologies utilisées
 
 * **HTML** : Structure sémantique.
-* **CSS** : Flexbox pour la mise en page, CSS Variables pour le theming dynamique, `@font-face`.
-* **JavaScript** :
-* Gestion des paramètres d'URL (`URLSearchParams`).
-* Boucles et conditions pour le tri de données.
+* **CSS** : Style de la page (principale difficulté vu qu'on a le droit qu'a une seule feuille de CSS)
+* **JavaScript** : Affichage, triage de tous les pokémons / Jeu "Who's that Pokémon"
 * **GitHub** : Mise en commun du travail
 
 
@@ -80,11 +79,8 @@ L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un
 - Documentation HTML CSS JS de Mozilla (notament pour le switch pour le tri de la page d'accueil): https://developer.mozilla.org/fr/docs/Web
 - Poképédia et connaissances personnelles de la série Pokémon (notament pour l'ajout de MissingNo.) : https://www.pokepedia.fr/MissingNo.
 - Figma pour la conception css des différentes pages : https://www.figma.com/
-- 
-- 
-- 
 - (Ulysse) connaissances en C++ de la spécialité SI (au lycée) - pour le switch
-
+- ...
 
 ## Auteurs
 
