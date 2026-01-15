@@ -361,3 +361,33 @@ html.pokemon-page {--primary-text-color: var(--primary-color, #2d3561);}
 html.pokemon-page .pokemon-name,
 html.pokemon-page .desc-section h3,
 html.pokemon-page .tab.active {color: var(--primary-text-color);}
+
+/* STYLES DU FOOTER COMMUN À TOUTES LES PAGES */
+footer{
+        flex-shrink:0;
+        border-top: 1px dashed #000;
+        width: 100%;
+        background: grey;
+}
+.contenu-footer{
+        width: 1200px;
+        margin:0 auto;
+        display: flex;
+        
+        font-size:20px;
+        padding: 70px 0 50px;
+}
+footer .bloc {
+        width: 50%;
+        margin:0 30px;
+
+}
+.footer-logo{
+        font-size: 25px;
+        padding :2px;
+}
+
+footer .img{
+        justify-content: right;  
+        scale: 75%;
+}
