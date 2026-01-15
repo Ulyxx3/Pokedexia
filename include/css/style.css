@@ -552,9 +552,10 @@ html.witp .error {
 /* STYLES DU FOOTER COMMUN À TOUTES LES PAGES */
 footer{
         flex-shrink:0;
-        border-top: 1px dashed #000;
+        border-top: 1px solid #28333f;
         width: 100%;
-        background: grey;
+        background: rgb(156, 188, 204);
+        box-shadow: #485b64 0px -4px 6px -1px;
 }
 .contenu-footer{
         width: 1200px;
