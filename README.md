@@ -13,7 +13,7 @@ Le site est conçu en **HTML, CSS et JavaScript pur**, et s'appuie sur une base 
 * **Menu déroulant interactif** : La barre de navigation inclut un menu "Types de Pokémon" généré dynamiquement, affichant les icônes des types pour une navigation rapide.
 * **Menu déroulant pour trier** : par id, poids, taille et alphabétique
 
-### Fiches Détaillées (Single Page)
+### Fiches Détaillées
 
 Chaque Pokémon possède sa propre page dédiée (`pokemon.html`) générée dynamiquement via des paramètres d'URL (`?id=Name`), affichant :
 
@@ -26,9 +26,9 @@ Chaque Pokémon possède sa propre page dédiée (`pokemon.html`) générée dyn
 
 * Une page dédiée (`type.html`) permet de lister uniquement les Pokémon appartenant à un type spécifique (ex: Eau, Feu, Spectre).
 
-##  Fonctionnalités Visuelles et UX
+##  Fonctionnalités Visuelles
 
-###  Thème Dynamique (Adaptive Coloring)
+###  Thème Dynamique
 
 L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un script JS et des variables CSS, l'ambiance colorée change sur la page de détail :
 
@@ -52,6 +52,7 @@ L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un
 ├── index.html          # Page d'accueil (Liste + Recherche)
 ├── pokemon.html        # Page de détail d'un Pokémon
 ├── type.html           # Page de filtrage par type
+├── witp.html           # Page du Jeu Who's that Pokémon
 ├── include/
 │   ├── css/
 │   │   └── style.css   # Styles globaux et thèmes par type
@@ -59,6 +60,7 @@ L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un
 │   │   ├── data.js     # Base de données (JSON array)
 │   │   ├── main.js     # Logique page d'accueil (Recherche, Liste)
 │   │   ├── pokemon.js  # Logique page détail (Affichage infos, Thèmes)
+│   │   ├── who.js      # Jeu Who's that pokemon
 │   │   └── type.js     # Logique page types (Filtrage)
 │   └── fonts/          # Polices d'écriture
 └── img/                # Images, Logos, GIFs et icônes de types
@@ -80,7 +82,7 @@ L'interface s'adapte automatiquement au type du Pokémon consulté. Grâce à un
 - Poképédia et connaissances personnelles de la série Pokémon (notament pour l'ajout de MissingNo.) : https://www.pokepedia.fr/MissingNo.
 - Figma pour la conception css des différentes pages : https://www.figma.com/
 - (Ulysse) connaissances en C++ de la spécialité SI (au lycée) - pour le switch
-- ...
+- Who's that Pokémon inspiré directement des intermissions des épisodes du dessin animé Pokémon
 
 ## Auteurs
 
