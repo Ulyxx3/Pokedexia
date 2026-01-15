@@ -1,3 +1,21 @@
+let ul = document.querySelector('#liste-types');
+
+if (ul && typeof types !== 'undefined') { 
+    for (let type of types) { 
+        let li = document.createElement("li"); 
+        
+        // On crée le lien et l'image
+        // On ne met pas de style ici, le CSS met la taille (.dropdown-content img)
+        li.innerHTML = `
+            <a href="type.html?id=${type}">
+                <img src="img/types/${type}.png" alt="${type}">
+            </a>
+        `;
+        
+        ul.appendChild(li);
+    }
+}
+
 // Renvoie le pokémon en fontion de l'URL
 function get_pokemon(data) {
 	let queryString = window.location.search
