@@ -357,16 +357,15 @@ html.pokemon-page .tab.active::after {
 }
 
 /* Système de changement de couleur du texte selon la couleur de la page pokemon*/
+/* Le JS de pokemon.js ajoute une variable CSS --primary-color avec la couleur principale du pokémon */
 html.pokemon-page {--primary-text-color: var(--primary-color, #2d3561);}
 html.pokemon-page .pokemon-name,
 html.pokemon-page .desc-section h3,
 html.pokemon-page .tab.active {color: var(--primary-text-color);}
 
-
-
-
-
-/* PARTIE WITP */
+/* ----------------------------------- */
+/* ------------PARTIE WITP ----------- */
+/* ----------------------------------- */
 html.witp body {
     margin: 0;
     min-height: 100vh;
