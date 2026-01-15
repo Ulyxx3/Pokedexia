@@ -143,18 +143,37 @@ function updateStatus() {
 }
 
 // Fonction pour afficher les premiers 'count' Pokémon
-// Crée tous les éléments de la liste (une seule fois ou après tri)
 function createListItems() {
     // Supprime les anciens éléments
     while (listePokemonUl.firstChild) listePokemonUl.removeChild(listePokemonUl.firstChild);
 
-    // Crée un <li> par Pokémon mais les marque cachés par défaut
+    // Crée un <li> par Pokémon
     for (let i = 0; i < data.length; i++) {
         let pokemon = data[i];
         let li = document.createElement('li');
         li.classList.add('pokemon-hidden');
-        // Ajoute le lien avec le nom et l'image
-        li.innerHTML = `<a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">${pokemon['nom']} <img src="img/${pokemon['gif']}" height="25px" alt="${pokemon['nom']}"></a>`;
+
+        // --- NOUVEAU CODE : Génération des images de types ---
+        // On parcourt le tableau pokemon.type (ex: ['Plante', 'Poison'])
+        // On crée une balise img pour chaque type
+        let typesHtml = '';
+        for (let type of pokemon.type) {
+            typesHtml += `<img src="img/types/${type}.png" class="type-mini" alt="${type}">`;
+        }
+        // -----------------------------------------------------
+
+        // On construit le HTML de la carte
+        // J'ai ajouté des <div> pour bien séparer le Nom, l'Image du Pokémon et les Types
+        li.innerHTML = `
+            <a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">
+                <div class="poke-name">${pokemon['nom']}</div>
+                <img src="img/${pokemon['gif']}" height="60px" alt="${pokemon['nom']}" class="poke-gif">
+                <div class="types-container">
+                    ${typesHtml}
+                </div>
+            </a>
+        `;
+        
         listePokemonUl.appendChild(li);
     }
 }
