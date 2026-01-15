@@ -153,17 +153,15 @@ function createListItems() {
         let li = document.createElement('li');
         li.classList.add('pokemon-hidden');
 
-        // --- NOUVEAU CODE : Génération des images de types ---
-        // On parcourt le tableau pokemon.type (ex: ['Plante', 'Poison'])
+        // On parcourt le tableau pokemon.type
         // On crée une balise img pour chaque type
         let typesHtml = '';
         for (let type of pokemon.type) {
             typesHtml += `<img src="img/types/${type}.png" class="type-mini" alt="${type}">`;
         }
-        // -----------------------------------------------------
 
-        // On construit le HTML de la carte
-        // J'ai ajouté des <div> pour bien séparer le Nom, l'Image du Pokémon et les Types
+        // On construit le HTML de la liste
+        // + ajout des <div> pour bien séparer le nom, l'Image du Pokémon et les Types
         li.innerHTML = `
             <a class="pokemon-link" href="pokemon.html?id=${encodeURIComponent(pokemon['nom'])}">
                 <div class="poke-name">${pokemon['nom']}</div>
@@ -174,7 +172,7 @@ function createListItems() {
             </a>
         `;
         
-        listePokemonUl.appendChild(li);
+        listePokemonUl.appendChild(li); 
     }
 }
 
@@ -186,8 +184,8 @@ function renderPokemonList(count) {
     }
 // Met à jour la visibilité des éléments
     const items = listePokemonUl.children;
-    for (let i = 0; i < items.length; i++) {
-        if (i < count) {
+    for (let i = 0; i < items.length; i++) { 
+        if (i < count) { 
             items[i].classList.remove('pokemon-hidden');
             items[i].classList.add('pokemon-visible');
         } else {
