@@ -213,24 +213,23 @@ if (moinsBtn) {
 renderPokemonList(currentCount)
 
 // Barre de recherche
-let searchInput = document.createElement("input")
+let searchInput = document.createElement("input") // Champ de saisie
 searchInput.type = "text"
-searchInput.id = "search-input"
-searchInput.placeholder = "Rechercher un Pokémon..."
-let searchWrapper = document.createElement("div")
-searchWrapper.id = "search-wrapper"
-searchWrapper.appendChild(searchInput)
+searchInput.id = "search-input" 
+searchInput.placeholder = "Rechercher un Pokémon..." // Texte indicatif
+let searchWrapper = document.createElement("div") // Conteneur pour la barre de recherche
+searchWrapper.id = "search-wrapper" // Conteneur pour le style
+searchWrapper.appendChild(searchInput) // Ajoute le champ au conteneur
 listePokemonUl.parentElement.insertBefore(searchWrapper, listePokemonUl) // Insère avant la liste
 
 // Écouteur pour la recherche
-searchInput.addEventListener("input", function() {
-    let filter = searchInput.value.toLowerCase(); // Texte recherché en minuscules
+searchInput.addEventListener("input", function() { // À chaque modification du texte
+    let filter = searchInput.value.toLowerCase(); // Texte recherché (se fais passer en minuscules)
     let pokemonLinks = document.querySelectorAll('.pokemon-link'); // Tous les liens de pokémon
     pokemonLinks.forEach(function(link) { // Pour chaque lien
         let text = link.textContent.toLowerCase(); // Texte du lien en minuscules
-        const li = link.parentElement; 
-        // Affiche ou cache selon la correspondance
-        if (text.includes(filter)) {
+        const li = link.parentElement; // Affiche ou cache selon la correspondance
+        if (text.includes(filter)) { // Si le texte du lien contient le texte recherché
             li.classList.remove('pokemon-hidden');
             li.classList.add('pokemon-visible');
         } else {
@@ -240,10 +239,4 @@ searchInput.addEventListener("input", function() {
     });
 })
 
-//fix le fait que tous les pokémons soient affichés après une recherche
-
-
-// Styliser la barre de recherche avec CSS ?
-
-// Styles de base pour le champ de recherche (dev avec le cul)
-// mettre la barre de recherche dans la nav bar tout le temps sauf dans pokemon.html et mettre les types dans un menu déroulant ?
+// PS : Le système de hidden/visible est réutilisé dans notre système de déroulement !

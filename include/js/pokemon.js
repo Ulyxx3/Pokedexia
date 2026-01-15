@@ -1,22 +1,3 @@
-// Remplir le menu avec les types de pokémon
-let ul = document.querySelector('#liste-types');
-
-if (ul && typeof types !== 'undefined') { // Vérifie que la variable types est définie
-    for (let type of types) { 
-        let li = document.createElement("li"); // Crée un élément de liste pour chaque type
-        
-        // On crée le lien et l'image
-        // Note : On ne met pas de style ici, le CSS s'occupe de la taille (.dropdown-content img)
-        li.innerHTML = `
-            <a href="type.html?id=${type}">
-                <img src="img/types/${type}.png" alt="${type}">
-            </a>
-        `;
-        
-        ul.appendChild(li);
-    }
-}
-
 // Renvoie le pokémon en fontion de l'URL
 function get_pokemon(data) {
 	let queryString = window.location.search
@@ -28,6 +9,7 @@ function get_pokemon(data) {
 		}
 	}
 }
+
 // Renvoie le pokémon en fontion de son nom (globalement la meme utilité que get_pokemon mais pour les évolutions)
 // juste j'arrivais pas a utiliser get_pokemon pour les évolutions donc j'ai fait une autre fonction
 function get_pokemonEvo(name, all_data) {
@@ -70,9 +52,9 @@ document.querySelector("title").textContent += pokemon['nom']
 document.querySelector("h1").textContent = pokemon['nom']
 document.querySelector("p#description").textContent = pokemon["description"]
 document.querySelector("div#image img").setAttribute("src", "img/" + pokemon["png"])
-document.querySelector("#taille").textContent = "Taille : " + pokemon["taille"]
-document.querySelector("#poids").textContent = "Poids : " + pokemon["poids"]
-document.querySelector("#noms").textContent = `Anglais : ${pokemon['nom_en']} ; Japonais : ${pokemon['nom_ja'][1]} (${pokemon['nom_ja'][0]})`
+document.querySelector("#taille").textContent = "Taille " + pokemon["taille"]
+document.querySelector("#poids").textContent = "Poids " + pokemon["poids"]
+document.querySelector("#noms").textContent = "Noms " + `${pokemon['nom_en']} ${pokemon['nom_ja'][1]}`
 document.querySelector("#types").innerHTML = format_types(pokemon["type"])
 document.querySelector("#evolutions").innerHTML = format_evolutions(pokemon["evolutions"])
 document.querySelector(".pokemon-number").textContent = `n° ${data.indexOf(pokemon) + 1}` // Affiche le numéro du pokémon
@@ -96,33 +78,48 @@ if (pokemon) {
 
     // Appliquer une couleur/gradient de fond selon les types du pokémon
     const typeColors = {
-        'feu': '#ff6b35',
-        'eau': '#3aa0ff',
-        'plante': '#5fc271',
-        'electrik': '#ffd034',
-        'normal': '#9d9d9d',
-        'poison': '#b950d7',
-        'roche': '#9e8f64',
-        'sol': '#c89a5b',
-        'glace': '#7dd3d3',
-        'psy': '#d88cff',
-        'dragon': '#7b9bff',
-        'fee': '#ffb3e6',
-        'insecte': '#b7d34a',
-        'spectre': '#a99bff',
-        'vol': '#b7e0fe',
-        'combat': '#ffb39a',
-        'acier': '#bfc7d1'
-    };
+    'feu': '#ff6b35',
+    'eau': '#3aa0ff',
+    'plante': '#5fc271',
+    'electrik': '#ffd034',
+    'normal': '#9d9d9d',
+    'poison': '#b950d7',
+    'roche': '#9e8f64',
+    'sol': '#c89a5b',
+    'glace': '#7dd3d3',
+    'psy': '#d88cff',
+    'dragon': '#7b9bff',
+    'fee': '#ffb3e6',
+    'insecte': '#b7d34a',
+    'spectre': '#a99bff',
+    'vol': '#b7e0fe',
+    'combat': '#ffb39a',
+    'acier': '#bfc7d1'
+};
 
-    const colors = pokemon.type.map(t => typeColors[normalize(t)]).filter(Boolean);
-    if (colors.length === 1) {
-        document.documentElement.style.setProperty('--primary-color', colors[0]);
-        document.body.style.background = `linear-gradient(135deg, ${colors[0]} 0%, ${colors[0]} 100%)`;
-    } else if (colors.length >= 2) {
-        // Use first two types to build a gradient
-        document.documentElement.style.setProperty('--primary-color', colors[0]);
-        document.documentElement.style.setProperty('--secondary-color', colors[1]);
-        document.body.style.background = `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1]} 100%)`;
+// Récupérer les couleurs des types au dessus
+const colors = [];
+for (let i = 0; i < pokemon.type.length; i++) {
+    const typeNormalise = normalize(pokemon.type[i]);
+    const couleur = typeColors[typeNormalise];
+    if (couleur) {
+        colors.push(couleur);
     }
 }
+
+// Créer le gradient en mélangeant les couleurs des types OU affiche la couleur unique du pokemon
+if (colors.length === 1) { // Si type unique alors
+    const couleurUnique = colors[0];
+    document.documentElement.style.setProperty('--primary-color', couleurUnique);
+    document.body.style.background = 'linear-gradient(135deg, ' + couleurUnique + ' 0%, ' + couleurUnique + ' 100%)';
+} else if (colors.length >= 2) { // Si double type alors
+    const couleur1 = colors[0];
+    const couleur2 = colors[1];
+    document.documentElement.style.setProperty('--primary-color', couleur1);
+    document.documentElement.style.setProperty('--secondary-color', couleur2);
+    document.body.style.background = 'linear-gradient(135deg, ' + couleur1 + ' 0%, ' + couleur2 + ' 100%)';
+}
+}
+
+// Voici une des sources qui m'on aidée pour faire ça :
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties

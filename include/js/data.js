@@ -1,5 +1,7 @@
 // Types des pokémon
 let types= ['Normal', 'Feu', 'Eau', 'Électrik', 'Plante', 'Glace', 'Combat', 'Poison', 'Sol', 'Vol', 'Psy', 'Insecte', 'Roche', 'Spectre', 'Dragon', 'Acier', 'Fée']
+
+// La descritpions de chaque type
 let desc_types = ["Ne sous-estimez pas les Pokémon de type Normal. Ils sont souvent plus puissants que ce qu'ils semblent.",
 	"Spectaculaires et explosifs, les Pokémon Feu sont les favoris du grand public. Attention tout de même à l'eau...",
 	"Type de Pokémon le plus représenté en première génération, Le type Eau est sans doute le plus polyvalent de tous.",

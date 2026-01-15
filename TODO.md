@@ -9,10 +9,9 @@ EN COURS POUR FINIR :
 - Ajouter un effet de texte sur le Welcome Message
 - Créer un Footer ???
 
-- TAFFER L'ORAL ET LA VISIBILITE DU CODE 
-
 ANNEXE :
 
+- mettre la barre de recherche dans la nav bar tout le temps sauf dans pokemon.html
 - Créer des icones de boutons custom
 - mettre un écart entre les gifs et les types/nom sur l'index
 - ajouter une réponse au fléche G/D pour changer d'évolution

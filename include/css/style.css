@@ -356,9 +356,8 @@ html.pokemon-page .tab.active::after {
     background: #2d3561;
 }
 
-/* Système de changement de couleur du text à MODIFIER */
+/* Système de changement de couleur du texte selon la couleur de la page pokemon*/
 html.pokemon-page {--primary-text-color: var(--primary-color, #2d3561);}
-
 html.pokemon-page .pokemon-name,
 html.pokemon-page .desc-section h3,
 html.pokemon-page .tab.active {color: var(--primary-text-color);}
