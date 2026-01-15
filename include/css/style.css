@@ -16,7 +16,8 @@ body {
 			font-size: 12px;
         }
 
-nav {
+/* Barre de navigation */
+nav { 
     padding: 10px 0;
     display: flex;
     justify-content: center;
@@ -26,6 +27,7 @@ nav {
     z-index: 100;
 }
 
+/* Style de la liste de navigation (bordeau ex) */
 ul#line {
     list-style: none;
     display: flex;
@@ -36,8 +38,6 @@ ul#line {
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-/*Changer la barre de nav, faire des images/logo cliquables et séparer les types par princiapl & secondaire*/
-/* Style du conteneur du menu */
 
 /* --- LE CONTENEUR PRINCIPAL --- */
 .dropdown-container {
@@ -110,16 +110,16 @@ ul#line {
 }
 
 
-
-
-h1 { /* mess de bienvenu */
+/* mess de bienvenu */
+h1 { 
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	color: #000000;
 }
 
-h2 { /* description des types lors de recherche filtré */
+/* description des types lors de recherche filtré */
+h2 { 
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -155,6 +155,9 @@ h2 { /* description des types lors de recherche filtré */
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 	transition: transform 0.2s;
 }
+
+
+/* Styles pour le système de déroulement (les flèches de bas de page) */
 .pokemon-visible {
     display: list-item;
 }
@@ -163,14 +166,16 @@ h2 { /* description des types lors de recherche filtré */
     display: none;
 }
 
-#liste-pokemon li:hover { /* effet au survol */
+/* effet au survol */
+#liste-pokemon li:hover {
 	transform: scale(1.05);
 	transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(100, 181, 246, 0.3);
     border-color: rgba(100, 181, 246, 0.5);
 }
 
-#liste-pokemon li img { /* image des pokémons */
+/* image des pokémons */
+#liste-pokemon li img { 
 	width: 100px;
 	height: 100px;
 	object-fit: contain;
@@ -178,21 +183,22 @@ h2 { /* description des types lors de recherche filtré */
     object-position: center;
 }
 
-
-#liste-pokemon li a { /* Bloc clickable */
+/* Bloc clickable par dessus l'image */
+#liste-pokemon li a { 
     display: block;
     width: 100%;
     color: inherit;
     text-decoration: none;
 }
 
-/* j'arrivais pas à le faire en full java donc bon */
+/* Call de la barre de recherche par le CSS */
 #search-wrapper {
     display: flex;
     justify-content: center;
     margin: 20px 0;
 }
 
+/* Style de la barre de recherche */
 #search-input {
     width: 70%;
     max-width: 600px;
@@ -204,6 +210,7 @@ h2 { /* description des types lors de recherche filtré */
     color: #000;
 }
 
+/* Part 1 : Style des boutons de navigation - Placement des bloc */
 div#boutons {
 	display: flex;
 	flex-wrap: wrap;
@@ -215,6 +222,7 @@ div#boutons {
 	list-style: none;
 }
 
+/* Part 2 : Style des boutons */
 div#boutons button {
     background-color: #f2f2f2;
     border: 1px solid #ccc;
@@ -229,7 +237,7 @@ div#boutons button {
     font-size: 16px;
 }
 
-
+/* Part 3.1 : Effet au survol gauche */
 div#boutons button.moins:hover {
     transform: scale(1.05);
     transform: translateY(-5px);
@@ -237,6 +245,7 @@ div#boutons button.moins:hover {
     border-color: rgba(100, 181, 246, 0.5);
 }
 
+/* Part 3.2 : Effet au survol droit */
 div#boutons button.plus:hover {
     transform: scale(1.05);
     transform: translateY(5px);
@@ -255,6 +264,7 @@ html.pokemon-page body {
             display: block;
 }
 
+/* Carte de fond de pokemon */
 html.pokemon-page .container {
             background: #f0f0f0;
             border-radius: 30px;
@@ -264,10 +274,7 @@ html.pokemon-page .container {
             box-shadow: 0 8px 30px rgba(100, 181, 246, 0.3);
 }
 
-html.pokemon-page .nav {
-    margin-bottom: 30px;
-}
-
+/* Le header contient le nom et le tag */
 html.pokemon-page .header {
     display: flex;
     justify-content: space-between;
@@ -275,18 +282,21 @@ html.pokemon-page .header {
     margin-bottom: 30px;
 }
 
+/* Le numéro du Pokémon */
 html.pokemon-page .pokemon-number {
     color: #666;
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 5px;
 }
 
+/* Le nom du Pokémon */
 html.pokemon-page .pokemon-name {
     color: #2d3561;
     font-size: 42px;
     font-weight: bold;
 }
 
+/* Styles du tag type de Pokémon */
 html.pokemon-page .types {
     margin-top: 8px;
     align-items: right;
@@ -303,23 +313,21 @@ html.pokemon-page #evolutions {
     gap: 20px;
 }
 
+/* Met la page en mode grid (évite d'avoir une page déffilable sur pc) */
 html.pokemon-page .main-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
+/* Style de l'image du Pokémon */
 html.pokemon-page .pokemon-image {
     width: 100%;
     max-width: 500px;
     height: auto;
 }
 
-html.pokemon-page .info-section {
-    display: flex;
-    flex-direction: column;
-}
-
+/* Styles des onglets des détails */
 html.pokemon-page .tabs {
     display: flex;
     gap: 30px;
@@ -327,6 +335,7 @@ html.pokemon-page .tabs {
     border-bottom: 2px solid #ddd;
 }
 
+/* Styles de l'onglets 'détails' */
 html.pokemon-page .tab {
     padding: 10px 0;
     color: #999;
@@ -336,11 +345,7 @@ html.pokemon-page .tab {
     position: relative;
 }
 
-html.pokemon-page .tab.active {
-    color: #2d3561;
-    font-weight: bold;
-}
-
+/* La barre de la tab 'détails' */
 html.pokemon-page .tab.active::after {
     content: '';
     position: absolute;
@@ -350,70 +355,6 @@ html.pokemon-page .tab.active::after {
     height: 3px;
     background: #2d3561;
 }
-
-html.pokemon-page .forms-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-html.pokemon-page .form-card {
-    aspect-ratio: 1;
-    border-radius: 15px;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-html.pokemon-page .form-card:hover {
-    transform: scale(1.05);
-}
-
-
-html.pokemon-page .form-icon {
-    font-size: 60px;
-}
-
-html.pokemon-page .desc-section h2 {
-    color: #2d3561;
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-html.pokemon-page .description {
-    color: #666;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-
-
-
-
-@media (max-width: 768px) {
-    html.pokemon-page .main-content {
-        grid-template-columns: 1fr;
-    }
-
-    html.pokemon-page .forms-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-/*Pour rendre les élements de la liste invisibles tant que bouton non pressé*/
-.invisible {
-    display: none;
-}
-
-/* ===== STYLES PAR TYPE DE POKÉMON ===== */
-/* Ces classes (type-feu, type-eau, etc.) sont ajoutées par pokemon.js sur <html> */
-/* Chaque type a sa propre couleur et style */
-
 
 /* Système de changement de couleur du text à MODIFIER */
 html.pokemon-page {--primary-text-color: var(--primary-color, #2d3561);}
