@@ -194,7 +194,7 @@ footer img {
     display: none;
 }
 
-/* effet au survol */
+/* effet au survol https://codepen.io/wahidullah_karimi/pen/ByyXGdq modifié */
 #liste-pokemon li:hover {
 	transform: scale(1.05);
 	transform: translateY(-5px);
